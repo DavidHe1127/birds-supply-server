@@ -9,7 +9,8 @@ const channels = [{
 export const resolvers = {
   Query: {
     channels: (obj, args, context, info) => {
-      return channels;
+      console.log(args);
+      return channels.filter(x => x.name === args.name);
     }
   }
 };

@@ -4,16 +4,18 @@ import {
 
 import { resolvers } from './resolvers';
 
-// ! denotes a required field
+// 1. ! denotes a required field
+// 2. Channel and Query are Object Type
+// 3. two special types Query and Mutation (Optional)
+// Query and Mutation 'entry point'
 const typeDefs = `
-
   type Channel {
-    id: ID!,
+    id: ID!
     name: String
   }
 
   type Query {
-    channels: [Channel]
+    channels(name: String = soccer): [Channel]
   }
 `;
 
