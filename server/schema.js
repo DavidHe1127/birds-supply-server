@@ -9,13 +9,25 @@ import { resolvers } from './resolvers';
 // 3. two special types Query and Mutation (Optional)
 // Query and Mutation 'entry point'
 const typeDefs = `
-  type Channel {
+  enum Gender {
+    Female
+    Male
+  }
+
+  type Employee {
     id: ID!
-    name: String
+    first_name: String
+    last_name: String
+    email: String
+    ip_address: String
+    gender: Gender
   }
 
   type Query {
-    channels(name: String = soccer): [Channel]
+    employees(
+      first_name: String = soccer
+      last_name: String = soccer
+    ): [Employee]
   }
 `;
 
