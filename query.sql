@@ -1,19 +1,19 @@
 -- basic query
 query getSomething {
-  channels {
-    name,
+  employees {
     id
+    first_name
   }
 }
 
 -- with argument
-query getSomething($name: String) {
-  channels(name: $name) {
-    name
+query getSomething($first_name: String) {
+  employees(first_name: $first_name) {
     id
+    first_name
   }
 }
 
 {
-  "name": "soccer"
+  "first_name": "Ketti"
 }

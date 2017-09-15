@@ -1,22 +1,17 @@
 const employees = require('./db.json').employees;
 
-// const channels = [{
-//   id: 1,
-//   name: 'soccer'
-// }, {
-//   id: 2,
-//   name: 'baseball'
-// }];
-
 export const resolvers = {
   Query: {
-    employees: (obj, args, context, info) => {
-      console.log(args);
-      if (!args.first_name) {
-        return employees;
+    employees: (obj, { first_name, email }, context, info) => {
+      if (first_name) {
+        return employees.find(x => x.first_name === first_name);
       }
 
-      return employees.filter(x => x.first_name === args.first_name);
+      if (email) {
+        return employees.find(x => x.email === email);
+      }
+
+      return employees;
     }
   }
 };

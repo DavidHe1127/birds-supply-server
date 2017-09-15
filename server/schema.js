@@ -25,9 +25,9 @@ const typeDefs = `
 
   type Query {
     employees(
-      first_name: String = soccer
-      last_name: String = soccer
-    ): [Employee]
+      first_name: String = Ketti
+      email: String
+    ): Employee
   }
 `;
 
