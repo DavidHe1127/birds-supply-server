@@ -6,14 +6,14 @@
       "last_name": "Orr",
       "email": "dorr0@gov.uk",
       "gender": "Female",
-      "company": 1,
+      "company_id": 1,
       "ip_address": "11.42.152.137"
     },
     {
       "id": 2,
       "first_name": "Talya",
       "last_name": "Kupis",
-      "company": 1,
+      "company_id": 1,
       "email": "tkupis1@indiegogo.com",
       "gender": "Female",
       "ip_address": "132.6.14.100"
@@ -24,7 +24,7 @@
       "last_name": "Stubbert",
       "email": "bstubbert2@unblog.fr",
       "gender": "Male",
-      "company": 2,
+      "company_id": 2,
       "ip_address": "238.110.45.51"
     },
     {
@@ -32,7 +32,7 @@
       "first_name": "Annabel",
       "last_name": "Abramowitch",
       "email": "aabramowitch3@1und1.de",
-      "company": 1,
+      "company_id": 1,
       "gender": "Female",
       "ip_address": "233.23.225.4"
     },
@@ -41,7 +41,7 @@
       "first_name": "Dill",
       "last_name": "Cradock",
       "email": "dcradock4@reverbnation.com",
-      "company": 4,
+      "company_id": 4,
       "gender": "Male",
       "ip_address": "174.36.229.40"
     },
@@ -50,7 +50,7 @@
       "first_name": "Terese",
       "last_name": "Leggis",
       "email": "tleggis5@newyorker.com",
-      "company": 2,
+      "company_id": 2,
       "gender": "Female",
       "ip_address": "233.44.167.200"
     },
@@ -58,7 +58,7 @@
       "id": 7,
       "first_name": "Thane",
       "last_name": "Dowles",
-      "company": 2,
+      "company_id": 2,
       "email": "tdowles6@theguardian.com",
       "gender": "Male",
       "ip_address": "70.230.185.180"
@@ -67,7 +67,7 @@
       "id": 8,
       "first_name": "Elston",
       "last_name": "Sammes",
-      "company": 3,
+      "company_id": 3,
       "email": "esammes7@patch.com",
       "gender": "Male",
       "ip_address": "131.108.244.161"
@@ -76,7 +76,7 @@
       "id": 9,
       "first_name": "Wolf",
       "last_name": "Pesterfield",
-      "company": 4,
+      "company_id": 4,
       "email": "wpesterfield8@uol.com.br",
       "gender": "Male",
       "ip_address": "196.138.145.164"
@@ -85,7 +85,7 @@
       "id": 10,
       "first_name": "Pepi",
       "last_name": "Siely",
-      "company": 4,
+      "company_id": 4,
       "email": "psiely9@msu.edu",
       "gender": "Female",
       "ip_address": "123.248.152.18"
@@ -94,7 +94,7 @@
       "id": 11,
       "first_name": "Dallas",
       "last_name": "Tribe",
-      "company": 1,
+      "company_id": 1,
       "email": "dtribea@yellowbook.com",
       "gender": "Female",
       "ip_address": "62.230.234.17"
@@ -103,7 +103,7 @@
       "id": 12,
       "first_name": "Niki",
       "last_name": "Lugton",
-      "company": 4,
+      "company_id": 4,
       "email": "nlugtonb@businessinsider.com",
       "gender": "Male",
       "ip_address": "136.25.10.175"
@@ -112,7 +112,7 @@
       "id": 13,
       "first_name": "Kitti",
       "last_name": "Bettenay",
-      "company": 4,
+      "company_id": 4,
       "email": "kbettenayc@addtoany.com",
       "gender": "Female",
       "ip_address": "3.186.41.43"
@@ -121,7 +121,7 @@
       "id": 14,
       "first_name": "Agosto",
       "last_name": "Emeney",
-      "company": 4,
+      "company_id": 4,
       "email": "aemeneyd@statcounter.com",
       "gender": "Male",
       "ip_address": "174.245.51.102"
@@ -130,7 +130,7 @@
       "id": 15,
       "first_name": "Chrisse",
       "last_name": "Escalera",
-      "company": 1,
+      "company_id": 1,
       "email": "cescalerae@state.gov",
       "gender": "Male",
       "ip_address": "58.94.82.177"
@@ -139,7 +139,7 @@
       "id": 16,
       "first_name": "Fay",
       "last_name": "Calrow",
-      "company": 4,
+      "company_id": 4,
       "email": "fcalrowf@mit.edu",
       "gender": "Female",
       "ip_address": "7.58.179.32"
@@ -148,7 +148,7 @@
       "id": 17,
       "first_name": "Cordi",
       "last_name": "Barrus",
-      "company": 4,
+      "company_id": 4,
       "email": "cbarrusg@weibo.com",
       "gender": "Female",
       "ip_address": "194.83.227.134"
@@ -157,7 +157,7 @@
       "id": 18,
       "first_name": "Gayle",
       "last_name": "Pavlik",
-      "company": 1,
+      "company_id": 1,
       "email": "gpavlikh@foxnews.com",
       "gender": "Female",
       "ip_address": "125.138.47.249"
@@ -166,7 +166,7 @@
       "id": 19,
       "first_name": "Ketti",
       "last_name": "Breydin",
-      "company": 4,
+      "company_id": 4,
       "email": "kbreydini@skyrock.com",
       "gender": "Female",
       "ip_address": "61.63.234.216"
@@ -175,7 +175,7 @@
       "id": 20,
       "first_name": "Nils",
       "last_name": "Andrivot",
-      "company": 1,
+      "company_id": 1,
       "email": "nandrivotj@meetup.com",
       "gender": "Male",
       "ip_address": "142.178.126.82"

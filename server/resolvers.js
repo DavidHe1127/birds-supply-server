@@ -1,8 +1,8 @@
-const employees = require('./db.json').employees;
+const { employees, companies } = require('./db.json');
 
 export const resolvers = {
   Query: {
-    employees: (obj, { first_name, email }, context, info) => {
+    employee: (obj, { first_name, email }, context, info) => {
       if (first_name) {
         return employees.find(x => x.first_name === first_name);
       }
@@ -11,7 +11,39 @@ export const resolvers = {
         return employees.find(x => x.email === email);
       }
 
-      return employees;
-    }
-  }
+      return null;
+    },
+
+    // use == as a hack since graphql-js coerce number into string for type id
+    employees: (ob, {company_id}) => employees.filter(x => x.company_id == company_id)
+
+  },
+
+  // colleagues: (obj, { employee_id }, context, info) => {
+  //   const employee = employees.find(x => x.id === employee_id);
+  //   let colleagues = [];
+
+  //   if (!employee) {
+  //     return colleagues;
+  //   }
+
+  //   const company = companies.find(x => x.id === employee.company_id);
+  //   const employeeIds = company.employees;
+
+  //   employees.forEach(e => employeeIds.includes(e.id) && e.id !== employee_id && colleagues.push(e));
+
+  //   return colleagues;
+  // },
+
+  // companies: (obj, {company_id, name}, context, info) => {
+  //   if (name) {
+  //     return companies.find(x => x.name === name);
+  //   }
+
+  //   if (company_id) {
+  //     return companies.find(x => x.id === company_id);
+  //   }
+
+  //   return companies;
+  // }
 };

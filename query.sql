@@ -7,13 +7,13 @@ query getSomething {
 }
 
 -- with argument
-query getSomething($first_name: String) {
-  employees(first_name: $first_name) {
+query getEmployeesByCompany($company_id: ID!) {
+  employees(company_id: $company_id) {
     id
     first_name
   }
 }
 
 {
-  "first_name": "Ketti"
+  "company_id": 1
 }
