@@ -1,4 +1,5 @@
 import { makeExecutableSchema } from 'graphql-tools';
+import typeDefs from './schemas/query.graphql';
 
 import { resolvers } from './resolvers';
 
@@ -6,34 +7,7 @@ import { resolvers } from './resolvers';
 // 2. Channel and Query are Object Type
 // 3. two special types Query and Mutation (Optional)
 // Query and Mutation 'entry point'
-const typeDefs = `
-  enum Gender {
-    Female
-    Male
-  }
 
-  type Employee {
-    id: ID!
-    first_name: String
-    last_name: String
-    email: String
-    ip_address: String
-    gender: Gender
-    colleagues: Employee
-  }
-
-  type Query {
-    employee(
-      first_name: String = Ketti
-      email: String
-    ): Employee
-
-    employees(
-      company_id: ID!
-    ): [Employee]
-
-  }
-`;
 // company: Company
   // type Company {
   //   id: ID!
