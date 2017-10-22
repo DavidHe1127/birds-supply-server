@@ -13,7 +13,16 @@ type Employee {
   colleagues: Employee
 }
 
+type Company {
+  id: ID!
+  name: String
+  address: String
+  employees: Employee
+}
+
 type Query {
   employee(first_name: String = Ketti, email: String): Employee
-  employees(company_id: ID!): [Employee]
+  employees: [Employee]
+  company(id: ID!): Company
+  companies: [Company]
 }

@@ -15,9 +15,19 @@ export const resolvers = {
     },
 
     // use == as a hack since graphql-js coerce number into string for type id
-    employees: (ob, {company_id}) => employees.filter(x => x.company_id == company_id)
+    employees: (obj, { company_id }) =>
+      employees.filter(x => x.company_id == company_id),
 
-  },
+    companies: () => companies,
+
+    company: (obj, { company_id }, context, info) => {
+      if (company_id) {
+        return companies.find(x => x.id === company_id);
+      }
+
+      return null;
+    }
+  }
 
   // colleagues: (obj, { employee_id }, context, info) => {
   //   const employee = employees.find(x => x.id === employee_id);
@@ -34,16 +44,4 @@ export const resolvers = {
 
   //   return colleagues;
   // },
-
-  // companies: (obj, {company_id, name}, context, info) => {
-  //   if (name) {
-  //     return companies.find(x => x.name === name);
-  //   }
-
-  //   if (company_id) {
-  //     return companies.find(x => x.id === company_id);
-  //   }
-
-  //   return companies;
-  // }
 };
