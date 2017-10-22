@@ -1,9 +1,10 @@
 ## GraphQL Playground
 
-The aim of this mini project is to familiarize myself with GraphQL and Relay.
+The aim of this mini project is to familiarize myself with GraphQL and Relay Modern.
 
-### Tooling & Libraries
+### Tech stack
+  * front-end
+    * relay-modern
+  * back-end
+    * Apollo Restify Server
 
-For GraphQL part, I am using Apollo one.
-
-It also has a relay app. 
