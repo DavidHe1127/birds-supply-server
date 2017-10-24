@@ -21,3 +21,9 @@ query getAllAdmins {
   }
 }
 
+# get company_id
+query getCompany($id:ID!) {
+  company(id: $id) {
+    name
+  }
+}

@@ -20,9 +20,9 @@ export const resolvers = {
 
     companies: () => companies,
 
-    company: (obj, { company_id }, context, info) => {
-      if (company_id) {
-        return companies.find(x => x.id === company_id);
+    company: (obj, { id }, context, info) => {
+      if (id) {
+        return companies.find(x => x.id == id);
       }
 
       return null;
@@ -34,6 +34,13 @@ export const resolvers = {
       }
 
       return null;
+    }
+  },
+
+  // resolve type Company's field employees
+  Company: {
+    employees: (company) => {
+      return employees.filter(x => x.company_id === company.id);
     }
   }
 

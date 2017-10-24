@@ -18,7 +18,7 @@ type Company {
   id: ID!
   name: String
   address: String
-  employees: Employee
+  employees: [Employee]
 }
 
 type Query {
