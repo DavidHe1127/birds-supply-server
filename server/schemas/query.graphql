@@ -11,6 +11,7 @@ type Employee {
   ip_address: String
   gender: Gender
   colleagues: Employee
+  admin: Boolean
 }
 
 type Company {
@@ -22,7 +23,9 @@ type Company {
 
 type Query {
   employee(first_name: String = Ketti, email: String): Employee
-  employees: [Employee]
+  employees(company_id: ID!): [Employee]
   company(id: ID!): Company
   companies: [Company]
+
+  allAdmins(company_id: ID!): [Employee]
 }
