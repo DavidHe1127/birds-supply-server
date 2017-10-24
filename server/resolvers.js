@@ -26,6 +26,14 @@ export const resolvers = {
       }
 
       return null;
+    },
+
+    allAdmins: (obj, { company_id }) => {
+      if (company_id) {
+        return employees.filter(x => x.company_id == company_id && x.admin);
+      }
+
+      return null;
     }
   }
 
