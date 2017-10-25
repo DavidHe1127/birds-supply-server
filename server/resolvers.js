@@ -34,29 +34,27 @@ export const resolvers = {
       }
 
       return null;
+    },
+
+    colleagues: (obj, { employee_id, gender }) => {
+      if (employee_id) {
+        const employee = employees.find(x => x.id == employee_id);
+        return employees.filter(
+          x =>
+            x.company_id === employee.company_id &&
+            x.id != employee.id &&
+            x.gender === gender
+        );
+      }
+
+      return null;
     }
   },
 
   // resolve type Company's field employees
   Company: {
-    employees: (company) => {
+    employees: company => {
       return employees.filter(x => x.company_id === company.id);
     }
   }
-
-  // colleagues: (obj, { employee_id }, context, info) => {
-  //   const employee = employees.find(x => x.id === employee_id);
-  //   let colleagues = [];
-
-  //   if (!employee) {
-  //     return colleagues;
-  //   }
-
-  //   const company = companies.find(x => x.id === employee.company_id);
-  //   const employeeIds = company.employees;
-
-  //   employees.forEach(e => employeeIds.includes(e.id) && e.id !== employee_id && colleagues.push(e));
-
-  //   return colleagues;
-  // },
 };
