@@ -10,7 +10,7 @@ type Employee {
   email: String
   ip_address: String
   gender: Gender
-  colleagues: Employee
+  colleagues: [Employee]
   admin: Boolean
 }
 
@@ -28,4 +28,5 @@ type Query {
   companies: [Company]
 
   allAdmins(company_id: ID!): [Employee]
+  colleagues(employee_id: ID!, gender: Gender!): [Employee]
 }
