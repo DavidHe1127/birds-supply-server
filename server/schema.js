@@ -1,5 +1,6 @@
-import { makeExecutableSchema } from 'graphql-tools';
-import typeDefs from './schemas/query.graphql';
+import { makeExecutableSchema, mergeSchemas } from 'graphql-tools';
+import query from './schemas/query.graphql';
+import mutation from './schemas/mutation.graphql';
 
 import { resolvers } from './resolvers';
 
@@ -10,6 +11,6 @@ import { resolvers } from './resolvers';
 
 // turns type definitions into an executable schema to which we can add custom resolvers
 // resolvers tell server how to resolve each part of a query
-const schema = makeExecutableSchema({ typeDefs, resolvers });
+const schema = makeExecutableSchema({ typeDefs: [mutation, query], resolvers });
 
 export { schema };
