@@ -53,7 +53,6 @@ export const resolvers = {
 
   Mutation: {
     addEmployee: (root, args) => {
-      console.log(args);
 
 
     }
