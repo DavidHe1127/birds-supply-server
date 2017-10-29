@@ -29,8 +29,8 @@ query getCompany($id:ID!) {
 }
 
 # get colleagues
-query getColleagues($employee_id: ID!, $gender: Gender!) {
-  colleagues(employee_id: $employee_id, gender: $gender) {
+query getColleagues($employee_id: ID! $gender: Gender!) {
+  colleagues(employee_id: $employee_id gender: $gender) {
     gender
   }
 }
