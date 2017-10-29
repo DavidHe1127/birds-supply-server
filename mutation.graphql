@@ -1,6 +1,0 @@
-# Add new employee
-mutation addNewEmployee {
-  addEmployee(input: {first_name: "ddd"}) {
-    id
-  }
-}
