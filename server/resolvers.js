@@ -1,5 +1,7 @@
 const { employees, companies } = require('./db.json');
 
+import add from './apis/employees/add';
+
 export const resolvers = {
   Query: {
     employee: (obj, { first_name, email }, context, info) => {
@@ -53,8 +55,7 @@ export const resolvers = {
 
   Mutation: {
     addEmployee: (root, args) => {
-
-
+      return add(args.input);
     }
   },
 

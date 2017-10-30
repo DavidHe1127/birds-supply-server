@@ -1,7 +1,5 @@
-const fs = require('fs');
-
 import Employee from './index';
-const { fetch } from '../../utils';
+import { read, write } from '../../utils';
 
 const add = ({
   first_name,
@@ -13,12 +11,10 @@ const add = ({
   ip_address
 }) => {
   const employee = new Employee(arguments[0]);
-  data.employees.push(employee);
-
-  return new Promise(resolve, reject) => {
-
-
-  };
+  return read().then(({ employees }) => {
+    employees.push(employee);
+    return write(employees);
+  });
 };
 
 export default add;

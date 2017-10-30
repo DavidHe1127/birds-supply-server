@@ -24,5 +24,6 @@ mutation addNewEmployee(
 }
 
 # {
-#   "first_name": "James"
+#   "first_name": "James",
+#   "company": 155
 # }
