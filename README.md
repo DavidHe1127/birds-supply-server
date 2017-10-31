@@ -12,4 +12,7 @@ The aim of this mini project is to familiarize myself with GraphQL and Relay Mod
     * relay-modern
   * back-end
     * Apollo Restify Server
+  * database
+    * mongodb
+    * mongoose
 
