@@ -41,6 +41,8 @@ const EmployeeSchema = new mongoose.Schema({
     type: String
   }
 
+}, {
+  collection: 'employees'
 });
 
 module.exports = mongoose.model('Employee', EmployeeSchema);
