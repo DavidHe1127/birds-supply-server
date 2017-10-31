@@ -2,6 +2,8 @@ import restify from 'restify';
 import { graphqlRestify, graphiqlRestify } from 'apollo-server-restify';
 import { schema } from './schema';
 
+const connect = require('./db/conn');
+
 const PORT = 4000;
 
 const server = restify.createServer({
@@ -18,4 +20,7 @@ server.get('/graphql', graphqlRestify(graphQLOptions));
 
 server.get('/graphiql', graphiqlRestify({ endpointURL: '/graphql' }));
 
-server.listen(PORT, () => console.log(`Listening on ${PORT}`));
+server.listen(PORT, () => {
+  connect();
+  console.log(`Listening on ${PORT}`);
+});
