@@ -1,6 +1,3 @@
-import Employee from './index';
-import { read, write } from '../../utils';
-
 const add = ({
   first_name,
   last_name,
@@ -10,11 +7,8 @@ const add = ({
   admin,
   ip_address
 }) => {
-  const employee = new Employee(arguments[0]);
-  return read().then(({ employees }) => {
-    employees.push(employee);
-    return write(employees);
-  });
+  console.log(arguments[0]);
+  // const employee = new Employee(arguments[0]);
 };
 
 export default add;
