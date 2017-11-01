@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+const Employee = require('./employee.model');
+
 const CompanySchema = new mongoose.Schema({
 
   name: {
@@ -10,7 +12,9 @@ const CompanySchema = new mongoose.Schema({
   address: {
     type: String,
     required: true
-  }
+  },
+
+  employees: [Employee.schema]
 
 }, {
   collection: 'companies'
