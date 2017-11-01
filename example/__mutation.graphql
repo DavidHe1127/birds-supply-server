@@ -18,9 +18,9 @@ mutation addNewEmployee(
     ip_address: $ip_address
     })
   {
+    # returned fields
     id
     first_name
-    company
   }
 }
 
