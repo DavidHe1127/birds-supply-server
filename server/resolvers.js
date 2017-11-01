@@ -55,10 +55,9 @@ export const resolvers = {
 
   Mutation: {
     addEmployee: (root, args) => {
-      return add(args.input);
+      // return add(args.input);
     }
   },
-
 
   // resolve type Company's field employees
   Company: {
