@@ -1,22 +1,24 @@
 {
   "name": "graphql-playpen",
   "version": "1.0.0",
-  "author": "David He",
+  "author": "",
   "email": "jialhe85@gmail.com",
   "description": "A graphql server with a little relay modern",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./server --exec \"cross-env BABEL_DISABLE_CACHE=1 babel-node --plugins babel-plugin-inline-import\" -e js,graphql"
+    "start": "nodemon ./server --exec \"cross-env BABEL_DISABLE_CACHE=1 babel-node --plugins babel-plugin-inline-import\" -e js,graphql",
+    "mongo": "mongo graphql-playpen",
+    "task:bulkadd": "node ./tasks/bulkAdd"
   },
   "keywords": [
     "relay-modern",
     "apollo-server",
     "mongodb"
   ],
-  "author": "",
   "license": "ISC",
   "dependencies": {
     "apollo-server-restify": "^1.1.2",
+    "config": "^1.27.0",
     "graphql": "^0.11.3",
     "graphql-tag": "^2.4.2",
     "graphql-tools": "^1.2.2",
