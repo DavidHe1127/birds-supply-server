@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
-const { get } = require('config');
+const config = require('config');
 
 // use node promise to overwrite mongoose built-in promise implementations
 mongoose.Promise = global.Promise;
 
 module.exports = () =>
   mongoose
-    .connect(get('mongo.uri'), {
+    .connect(config.get('mongo.uri'), {
       useMongoClient: true
     })
     .then(res => {
