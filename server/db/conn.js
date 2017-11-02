@@ -1,13 +1,12 @@
 const mongoose = require('mongoose');
+const { get } = require('config');
 
 // use node promise to overwrite mongoose built-in promise implementations
 mongoose.Promise = global.Promise;
 
-const uri = 'mongodb://localhost:27017/graphql-playpen';
-
 module.exports = () =>
   mongoose
-    .connect(uri, {
+    .connect(get('mongo.uri'), {
       useMongoClient: true
     })
     .then(res => {

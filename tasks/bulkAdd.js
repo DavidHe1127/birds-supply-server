@@ -1,16 +1,16 @@
-// const param = process.argv[2];
+const connect = require('../server/db/conn');
 
 const Company = require('../server/models/company.model');
-const mongoose = require('mongoose');
 
-mongoose.Promise = global.Promise;
+async function addCompany() {
+  await connect();
+  const company = new Company({
+    name: "Allen's Pets",
+    address: '29 Keats Ave Rockdale',
+    id: mongoose.Schema.Types.ObjectId
+  });
 
-const company = new Company({
-  name: "Allen's Pets",
-  address: '29 Keats Ave Rockdale',
-  id: mongoose.Schema.Types.ObjectId
-});
+  const res = await company.save();
+}
 
-company.save((err, res) => {
-  console.log(err, res);
-});
+addCompany();
