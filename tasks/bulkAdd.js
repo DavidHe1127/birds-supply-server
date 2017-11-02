@@ -1,7 +1,7 @@
 const args = process.argv.slice(2);
 
 if (args.length !== 1) {
-  throw new Error('multiple input files not supported');
+  throw new Error('Only one file can be passed');
 }
 
 const [file] = args;
