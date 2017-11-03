@@ -16,7 +16,7 @@ const Model = require(`../server/models/${file}.model`);
 
 const readFile = promisify(fs.readFile);
 
-async function doIt(name) {
+async function doIt (name) {
   connect();
 
   const ext = name.includes('.') && name.split('.').slice(-1)[0];
@@ -39,7 +39,7 @@ async function doIt(name) {
 
     process.exit(0);
   } catch (err) {
-    throw new Error('invalid json input');
+    throw new Error(err);
   }
 }
 
