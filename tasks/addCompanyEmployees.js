@@ -10,9 +10,9 @@ const { promisify } = require('util');
 const fs = require('fs');
 const connect = require('../server/db/conn');
 const path = require('path');
-const mongoose = require('mongoose');
 
 const Model = require(`../server/models/${file}.model`);
+const Employee = require(`../server/models/employee.model`);
 
 const readFile = promisify(fs.readFile);
 
@@ -30,13 +30,16 @@ async function doIt (name) {
 
   try {
     const json = JSON.parse(content);
-
     for (const j of json) {
-      j.id = mongoose.Schema.Types.ObjectId;
       const model = new Model(j);
-      await model.save();
-    }
+      const { _id, employees } = await model.save();
 
+      for (const e of employees) {
+        const employee = e.toJSON();
+        employee.company = _id;
+        await new Employee(employee).save();
+      }
+    }
     process.exit(0);
   } catch (err) {
     throw new Error(err);

@@ -8,7 +8,7 @@
   "scripts": {
     "start": "nodemon ./server --exec \"cross-env BABEL_DISABLE_CACHE=1 babel-node --plugins babel-plugin-inline-import\" -e js,graphql",
     "mongo": "mongo graphql-playpen",
-    "task:bulkadd": "node ./tasks/bulkAdd"
+    "task:addseed": "node ./tasks/addCompanyEmployees"
   },
   "keywords": [
     "relay-modern",
