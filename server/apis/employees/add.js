@@ -1,14 +1,21 @@
+const Employee = require('../../models/employee.model');
+
 const add = ({
   first_name,
   last_name,
   email,
   gender,
-  company_id,
+  company,
   admin,
   ip_address
-}) => {
-  console.log(arguments[0]);
-  // const employee = new Employee(arguments[0]);
-};
+}) =>
+  new Employee({
+    first_name,
+    last_name,
+    email,
+    gender,
+    admin,
+    company
+  }).save();
 
 export default add;
