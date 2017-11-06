@@ -1,6 +1,4 @@
-const { employees, companies } = require('./db.json');
-
-import add from './apis/employees/add';
+import addEmployee from './apis/employees/add';
 
 export const resolvers = {
   Query: {
@@ -54,9 +52,7 @@ export const resolvers = {
   },
 
   Mutation: {
-    addEmployee: (root, args) => {
-      // return add(args.input);
-    }
+    addEmployee: (root, args) => addEmployee(args.input)
   },
 
   // resolve type Company's field employees
