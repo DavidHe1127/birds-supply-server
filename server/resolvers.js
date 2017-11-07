@@ -1,5 +1,5 @@
 import addEmployee from './apis/employees/add';
-import filterEmployee from './apis/employees/add';
+import filterEmployee from './apis/employees/filter';
 
 const resolvers = mergeInfo => ({
   Query: {
@@ -15,16 +15,7 @@ const resolvers = mergeInfo => ({
       return null;
     },
 
-    employees: (obj, { company_id }) => {
-      console.log('cc');
-      filterEmployee(company_id).then(res => {
-        console.log(res);
-      }).catch(err => {
-        console.log(err);
-      });
-
-      return [];
-    },
+    employees: (obj, { company_id }) => filterEmployee(company_id),
 
     companies: () => companies,
 
