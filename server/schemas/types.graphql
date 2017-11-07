@@ -1,0 +1,23 @@
+type Company {
+  id: ID!
+  name: String
+  address: String
+  employees: [Employee]
+}
+
+enum Gender {
+  Female
+  Male
+}
+
+type Employee {
+  id: ID!
+  first_name: String
+  last_name: String
+  email: String
+  ip_address: String
+  gender: Gender
+  company_id: ID
+  colleagues: [Employee]
+  admin: Boolean
+}

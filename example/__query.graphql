@@ -1,7 +1,8 @@
 # basic query
 query getSomething {
-  employees {
+  employees(company: "59fee8373182d41afcc5ca16") {
     id
+    company
     first_name
   }
 }

@@ -1,6 +1,6 @@
 import addEmployee from './apis/employees/add';
 
-export const resolvers = {
+const resolvers = mergeInfo => ({
   Query: {
     employee: (obj, { first_name, email }, context, info) => {
       if (first_name) {
@@ -61,4 +61,6 @@ export const resolvers = {
       return employees.filter(x => x.company_id === company.id);
     }
   }
-};
+});
+
+export default resolvers;
