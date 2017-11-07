@@ -1,0 +1,11 @@
+type Company {
+  id: ID!
+  name: String
+  address: String
+  employees: [Employee]
+}
+
+type Query {
+  company(id: ID!): Company
+  companies: [Company]
+}
