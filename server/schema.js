@@ -7,7 +7,7 @@ import companyQuery from './schemas/company/query.graphql';
 
 import employeeMutation from './schemas/employee/mutation.graphql';
 
-import { resolvers } from './resolvers';
+import resolvers from './resolvers';
 
 const merge = types => (...args) => {
   return [types, ...args];
