@@ -1,10 +1,10 @@
-const args = process.argv.slice(2);
+// const args = process.argv.slice(2);
 
-if (args.length !== 1) {
-  throw new Error('Only one file can be passed');
-}
+// if (args.length !== 1) {
+//   throw new Error('Only one file can be passed');
+// }
 
-const [file] = args;
+const [file] = ['company'];
 
 const { promisify } = require('util');
 const fs = require('fs');
@@ -36,7 +36,7 @@ async function doIt (name) {
 
       for (const e of employees) {
         const employee = e.toJSON();
-        employee.company = _id;
+        employee.company_id = _id;
         await new Employee(employee).save();
       }
     }
