@@ -1,18 +1,15 @@
 import addEmployee from './apis/employees/add';
 import filterEmployee from './apis/employees/filter';
+import getEmployee from './apis/employees/get';
 
 const resolvers = mergeInfo => ({
   Query: {
-    employee: (obj, { first_name, email }, context, info) => {
-      if (first_name) {
-        return employees.find(x => x.first_name === first_name);
-      }
+    employee: (obj, { first_name, email }) => {
 
-      if (email) {
-        return employees.find(x => x.email === email);
-      }
 
-      return null;
+
+
+      getEmployee({first_name, email})
     },
 
     employees: (obj, { company_id }) => filterEmployee(company_id),
