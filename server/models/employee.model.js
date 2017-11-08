@@ -19,7 +19,7 @@ const EmployeeSchema = new mongoose.Schema(
       required: true
     },
 
-    company: {
+    company_id: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Company',
       index: true,

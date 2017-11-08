@@ -1,6 +1,6 @@
 # basic query
 query getSomething {
-  employees(company_id: "59fee8373182d41afcc5ca16") {
+  employees(company_id: "5a0298f0ea98dd25c87bf5e9") {
     id
     company_id
     first_name
