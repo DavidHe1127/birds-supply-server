@@ -1,5 +1,5 @@
 const Employees = require('../../models/employee.model');
 
-const filter = company_id => Employees.find({ company_id });
+const filter = query => Employees.find(query);
 
 export default filter;

@@ -16,22 +16,23 @@ query getEmployeesByCompany($company_id: ID!) {
 }
 
 # get all admins
-query getAllAdmins {
-  allAdmins(company_id: 1) {
-    name
+query {
+  allAdmins(company_id: "5a042db200cdbc06b7a92ca3") {
+    first_name
   }
 }
 
 # get company_id
-query getCompany($id:ID!) {
-  company(id: $id) {
+query {
+  company(id: "5a042db200cdbc06b7a92ca3") {
     name
   }
 }
 
 # get colleagues
-query getColleagues($employee_id: ID! $gender: Gender!) {
-  colleagues(employee_id: $employee_id gender: $gender) {
-    gender
+query {
+  colleagues(company_id: "5a042db200cdbc06b7a92ca3", employee_id:"5a042db200cdbc06b7a92ca4") {
+    first_name
+    company_id
   }
 }

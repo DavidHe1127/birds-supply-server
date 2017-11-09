@@ -1,5 +1,5 @@
 const Employee = require('../../models/employee.model');
 
-const get = payload => Employee.find(payload);
+const get = query => Employee.findOne(query);
 
 export default get;
