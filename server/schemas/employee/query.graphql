@@ -19,6 +19,6 @@ type Query {
   employee(first_name: String = Ketti, email: String): Employee
   employees(company_id: ID!): [Employee]
 
-  allAdmins(company: ID!, admin: Boolean = true): [Employee]
-  colleagues(employee_id: ID!, gender: Gender!): [Employee]
+  allAdmins(company_id: ID!): [Employee]
+  colleagues(employee_id: ID!, company_id: ID!): [Employee]
 }
