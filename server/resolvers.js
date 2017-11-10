@@ -1,9 +1,5 @@
-import addEmployee from './apis/employees/add';
-import filterEmployee from './apis/employees/filter';
-import getEmployee from './apis/employees/get';
-
-import filterCompany from './apis/companies/filter';
-import getCompany from './apis/companies/get';
+import * as employeeResolvers from './resolvers/employee/query';
+import * as emp from './resolvers/employee/query';
 
 const resolvers = mergeInfo => ({
   Query: {
