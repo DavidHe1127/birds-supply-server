@@ -1,9 +1,9 @@
 import { makeExecutableSchema, mergeSchemas } from 'graphql-tools';
 
-import employeeQuery from './schemas/employee/query.graphql';
-import companyQuery from './schemas/company/query.graphql';
+import employeeQuery from './types/employee/query.graphql';
+import companyQuery from './types/company/query.graphql';
 
-import employeeMutation from './schemas/employee/mutation.graphql';
+import employeeMutation from './types/employee/mutation.graphql';
 
 import resolvers from './resolvers';
 
