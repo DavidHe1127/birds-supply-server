@@ -1,5 +1,5 @@
-import filter from './apis/employees/filter';
-import get from './apis/employees/get';
+import filter from '../../apis/employees/filter';
+import get from '../../apis/employees/get';
 
 const employee = (obj, { first_name, email }) => {
   const query = {};
@@ -27,4 +27,11 @@ const colleagues = (obj, { company_id, employee_id }) =>
     }
   });
 
-export { employee, employees, allAdmins, colleagues };
+const resolvers = {
+  employee,
+  employees,
+  allAdmins,
+  colleagues
+};
+
+export default resolvers;
