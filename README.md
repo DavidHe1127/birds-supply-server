@@ -3,7 +3,6 @@
 The aim of this mini project is to familiarize myself with GraphQL and Relay Modern.
 
 ### TODO
- * Separate resolvers by entity i.e company and employee
  * Add Update and Delete for employee
  * Add start script to start mongodb as service
  * Add mutations and subscriptions
