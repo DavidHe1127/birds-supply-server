@@ -7,9 +7,6 @@ import employeeMutation from './types/employee/mutation.graphql';
 
 import resolvers from './resolvers';
 
-console.log(resolvers);
-
-
 // console.log(includeTypes(employeeQuery, employeeMutation));
 // turn type def in template string into executable schema object
 const employeeSchema = makeExecutableSchema({

@@ -1,20 +1,7 @@
-// query
-import * as companyQueryResolvers from './company/query';
-import * as employeeQueryResolvers from './employee/query';
+import employeeResolvers from './employee';
+import companyResolvers from './company';
 
-// mutation
-import * as employeeMutationResolvers from './employee/mutation';
+const merge = require('lodash.merge');
+const resolvers = mergeInfo => merge(employeeResolvers, companyResolvers);
 
-const resolvers = mergeInfo => ({
-  Query: {
-    ...companyQueryResolvers.Query,
-    ...employeeQueryResolvers
-  },
-  Mutation: {
-    ...employeeMutationResolvers
-  }
-});
-
-console.log(resolvers());
-
-export default resolvers;
+export default resolvers
