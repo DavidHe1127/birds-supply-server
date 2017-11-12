@@ -2,6 +2,8 @@ import restify from 'restify';
 import { graphqlRestify, graphiqlRestify } from 'apollo-server-restify';
 import { schema } from './schema';
 
+global._root = __dirname + '/'; // eslint-disable-line
+
 const connect = require('./db/conn');
 
 const PORT = 4000;
