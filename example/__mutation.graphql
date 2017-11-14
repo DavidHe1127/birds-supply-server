@@ -4,7 +4,7 @@ mutation addNewEmployee(
   $last_name: String
   $email: String
   $gender: Gender
-  $company: ID!
+  $company_id: ID!
   $admin: Boolean
   $ip_address: String)
 {
@@ -13,7 +13,7 @@ mutation addNewEmployee(
     last_name: $last_name
     email: $email
     gender: $gender
-    company: $company
+    company_id: $company
     admin: $admin
     ip_address: $ip_address
     })
@@ -26,5 +26,16 @@ mutation addNewEmployee(
 
 # {
 #   "first_name": "James",
-#   "company": "59fee8373182d41afcc5ca08"
+#   "company_id": "59fee8373182d41afcc5ca08"
 # }
+
+# Update employee
+
+{
+  setEmployee(input: {
+    company_id: "5a042db200cdbc06b7a92ca1"
+    admin: true
+    _id: "5a042db200cdbc06b7a92c9c"
+    email: "setEmployeedone@david.com.au"
+    })
+}
