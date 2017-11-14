@@ -15,7 +15,12 @@ input setEmployeeInput {
   admin: Boolean
 }
 
+input delEmployeeInput {
+  _id: ID!
+}
+
 type Mutation {
   addEmployee(input: addEmployeeInput): Employee
   setEmployee(input: setEmployeeInput): Employee
+  delEmployee(input: delEmployeeInput): Employee
 }
