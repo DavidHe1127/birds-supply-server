@@ -30,12 +30,18 @@ mutation addNewEmployee(
 # }
 
 # Update employee
-
 {
   setEmployee(input: {
     company_id: "5a042db200cdbc06b7a92ca1"
     admin: true
     _id: "5a042db200cdbc06b7a92c9c"
     email: "setEmployeedone@david.com.au"
+    })
+}
+
+# Del employee
+{
+  delEmployee(input: {
+      _id: "5a042db200cdbc06b7a92c9c"
     })
 }
