@@ -26,7 +26,8 @@
     "lodash.merge": "^4.6.0",
     "mongodb": "^2.2.33",
     "mongoose": "^4.13.0",
-    "restify": "^5.2.0"
+    "restify": "^5.2.0",
+    "restify-cors-middleware": "^1.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",
