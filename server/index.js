@@ -2,6 +2,15 @@ import restify from 'restify';
 import { graphqlRestify, graphiqlRestify } from 'apollo-server-restify';
 import { schema } from './schema';
 
+const corsMiddleware = require('restify-cors-middleware');
+
+const cors = corsMiddleware({
+  preflightMaxAge: 5,
+  origins: ['*'],
+  allowHeaders: ['API-Token'],
+  exposeHeaders: ['API-Token-Expiry']
+});
+
 global._root = __dirname + '/'; // eslint-disable-line
 
 const connect = require('./db/conn');
@@ -13,6 +22,9 @@ const server = restify.createServer({
 });
 
 const graphQLOptions = { schema };
+
+server.pre(cors.preflight);
+server.use(cors.actual);
 
 server.use(restify.plugins.bodyParser());
 server.use(restify.plugins.queryParser());
