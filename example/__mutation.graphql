@@ -1,21 +1,15 @@
-# Add new employee
-mutation addNewEmployee(
+# Add new customer
+mutation addNewCustomer(
   $first_name: String
   $last_name: String
   $email: String
   $gender: Gender
-  $company_id: ID!
-  $admin: Boolean
-  $ip_address: String)
 {
-  addEmployee(input: {
+  addCustomer(input: {
     first_name: $first_name
     last_name: $last_name
     email: $email
     gender: $gender
-    company_id: $company
-    admin: $admin
-    ip_address: $ip_address
     })
   {
     # returned fields
@@ -29,19 +23,17 @@ mutation addNewEmployee(
 #   "company_id": "59fee8373182d41afcc5ca08"
 # }
 
-# Update employee
+# Update customer
 {
-  setEmployee(input: {
-    company_id: "5a042db200cdbc06b7a92ca1"
-    admin: true
+  setCustomer(input: {
     _id: "5a042db200cdbc06b7a92c9c"
-    email: "setEmployeedone@david.com.au"
+    email: "setCustomerdone@david.com.au"
     })
 }
 
-# Del employee
+# Del customer
 {
-  delEmployee(input: {
+  delCustomer(input: {
       _id: "5a042db200cdbc06b7a92c9c"
     })
 }

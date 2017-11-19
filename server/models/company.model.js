@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 
-const Employee = require('./employee.model');
-
 const CompanySchema = new mongoose.Schema({
 
   name: {
@@ -14,7 +12,7 @@ const CompanySchema = new mongoose.Schema({
     required: true
   },
 
-  employees: [Employee.schema]
+  // employees: [Employee.schema]
 
 }, {
   collection: 'companies'

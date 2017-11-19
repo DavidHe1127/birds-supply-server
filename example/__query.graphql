@@ -1,38 +1,15 @@
 # basic query
-query getSomething {
-  employees(company_id: "5a0298f0ea98dd25c87bf5e9") {
+query getCustomerByEmail {
+  customers(email: "a@abc.com.au") {
     id
-    company_id
     first_name
   }
 }
 
 # with argument
-query getEmployeesByCompany($company_id: ID!) {
-  employees(company_id: $company_id) {
+query getCustomerById($id: ID!) {
+  customers(id: $id) {
     id
     first_name
-  }
-}
-
-# get all admins
-query {
-  allAdmins(company_id: "5a042db200cdbc06b7a92ca3") {
-    first_name
-  }
-}
-
-# get company_id
-query {
-  company(id: "5a042db200cdbc06b7a92ca3") {
-    name
-  }
-}
-
-# get colleagues
-query {
-  colleagues(company_id: "5a042db200cdbc06b7a92ca3", employee_id:"5a042db200cdbc06b7a92ca4") {
-    first_name
-    company_id
   }
 }
