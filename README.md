@@ -1,6 +1,6 @@
-## GraphQL Playground
+## Bird Supply Server
 
-The aim of this mini project is to familiarize myself with GraphQL and Relay Modern.
+A platform that connects bird lovers and suppliers together
 
 ### TODO
  * Add supplier and bird seed data
