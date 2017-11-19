@@ -1,30 +1,30 @@
 import { makeExecutableSchema, mergeSchemas } from 'graphql-tools';
 
-import employeeQuery from './types/employee/query.graphql';
+import customerQuery from './types/customer/query.graphql';
 import companyQuery from './types/company/query.graphql';
 
-import employeeMutation from './types/employee/mutation.graphql';
+import customerMutation from './types/customer/mutation.graphql';
 
 import resolvers from './resolvers';
 
-// console.log(includeTypes(employeeQuery, employeeMutation));
+// console.log(includeTypes(customerQuery, customerMutation));
 // turn type def in template string into executable schema object
-const employeeSchema = makeExecutableSchema({
-  typeDefs: [employeeQuery, employeeMutation]
+const customerSchema = makeExecutableSchema({
+  typeDefs: [customerQuery, customerMutation]
 });
 
 const companySchema = makeExecutableSchema({
   typeDefs: [companyQuery]
 });
 
-const linkTypeDef = `
-  extend type Company {
-    employees: [Employee]
-  }
-`;
+// const linkTypeDef = `
+//   extend type Company {
+//     customers: [Customer]
+//   }
+// `;
 
 const schema = mergeSchemas({
-  schemas: [employeeSchema, companySchema, linkTypeDef],
+  schemas: [customerSchema, companySchema, /*linkTypeDef*/],
   resolvers
 });
 

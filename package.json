@@ -1,21 +1,20 @@
 {
-  "name": "graphql-playpen",
+  "name": "bird-supply-server",
   "version": "1.0.0",
-  "author": "",
+  "author": "David He",
   "email": "jialhe85@gmail.com",
-  "description": "A graphql server with a little relay modern",
+  "description": "Bird Supply Server powered by apollo-server and graphql",
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./server --exec \"cross-env BABEL_DISABLE_CACHE=1 babel-node --plugins babel-plugin-inline-import\" -e js,graphql",
-    "mongo": "mongo graphql-playpen",
-    "task:addseed": "node ./tasks/addCompanyEmployees"
+    "mongo": "mongo graphql-playpen"
   },
   "keywords": [
     "relay-modern",
     "apollo-server",
     "mongodb"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "apollo-server-restify": "^1.2.0",
     "config": "^1.27.0",

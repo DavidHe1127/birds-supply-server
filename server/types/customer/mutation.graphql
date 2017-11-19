@@ -1,0 +1,22 @@
+input addCustomerInput {
+  first_name: String
+  last_name: String
+  email: String
+  gender: Gender
+}
+
+input setCustomerInput {
+  _id: ID!
+  email: String
+}
+
+input delCustomerInput {
+  _id: ID!
+  email: String
+}
+
+type Mutation {
+  addCustomer(input: addCustomerInput): Customer
+  setCustomer(input: setCustomerInput): Customer
+  delCustomer(input: delCustomerInput): Customer
+}
