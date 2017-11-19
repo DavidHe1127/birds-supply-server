@@ -1,4 +1,4 @@
-const create = require('../createResolverMap')('company');
+const create = require('../createResolverMap')('supplier');
 
 module.exports = {
   Query: create('queries'),

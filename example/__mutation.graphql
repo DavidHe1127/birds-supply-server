@@ -20,7 +20,6 @@ mutation addNewCustomer(
 
 # {
 #   "first_name": "James",
-#   "company_id": "59fee8373182d41afcc5ca08"
 # }
 
 # Update customer

@@ -1,7 +1,7 @@
 import { makeExecutableSchema, mergeSchemas } from 'graphql-tools';
 
 import customerQuery from './types/customer/query.graphql';
-import companyQuery from './types/company/query.graphql';
+import supplierQuery from './types/supplier/query.graphql';
 
 import customerMutation from './types/customer/mutation.graphql';
 
@@ -13,18 +13,18 @@ const customerSchema = makeExecutableSchema({
   typeDefs: [customerQuery, customerMutation]
 });
 
-const companySchema = makeExecutableSchema({
-  typeDefs: [companyQuery]
+const supplierSchema = makeExecutableSchema({
+  typeDefs: [supplierQuery]
 });
 
 // const linkTypeDef = `
-//   extend type Company {
+//   extend type Supplier {
 //     customers: [Customer]
 //   }
 // `;
 
 const schema = mergeSchemas({
-  schemas: [customerSchema, companySchema, /*linkTypeDef*/],
+  schemas: [customerSchema, supplierSchema, /*linkTypeDef*/],
   resolvers
 });
 
