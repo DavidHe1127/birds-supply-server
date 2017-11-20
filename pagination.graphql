@@ -1,0 +1,61 @@
+{
+  user(id: "ZW5jaG9kZSBIZWxsb1dvcmxk") {
+    id
+    name
+    friendsConnection(first: 3) {
+      edges {
+        cursor
+        node {
+          id
+          name
+        }
+      }
+    }
+  }
+}
+
+
+interface Node {
+  id: ID!
+}
+
+type User implements Node {
+  id: ID!
+  name: String
+}
+
+type UserFriendsConnection {
+  pageInfo: PageInfo!
+  edges: [UserFriendsEdge]
+}
+
+type UserFriendsEdge {
+  cursor: String!
+  node: User
+  friendedAt: DateTime
+}
+
+type User {
+  id: ID!
+  name: String
+  friendsConnection(
+    first: Int,
+    after: String,
+    last: Int,
+    before: String
+  ): UserFriendsConnection
+}
+
+type PageInfo {
+  # When paginating forwards, are there more items?
+  hasNextPage: Boolean
+
+  # When paginating backwards, are there more items?
+  hasPreviousPage: Boolean
+
+  # When paginating backwards, the cursor to continue.
+  startCursor: String
+
+  # When paginating forwards, the cursor to continue.
+  endCursor: String
+}
