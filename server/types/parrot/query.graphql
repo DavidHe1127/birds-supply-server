@@ -1,0 +1,27 @@
+type Parrot implements Node {
+  id: ID!
+  name: String
+  size: Int
+  mass: Float
+  range: String
+  lifespan: Int
+  species: String
+  code: String
+}
+
+type ParrotConnection {
+  pageInfo: PageInfo!
+  # a list of edges
+  edges: [ParrotEdge]
+  count: Int!
+}
+
+type ParrotEdge {
+  cursor: String
+  node: Parrot
+}
+
+type Viewer {
+  parrot(id: ID!): Parrot
+  parrots: ParrotConnection
+}

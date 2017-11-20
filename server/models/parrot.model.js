@@ -40,8 +40,6 @@ const ParrotSchema = new mongoose.Schema({
     index: true
   }
 
-  // parrots: [Parrot.schema]
-
 }, {
   collection: 'parrots'
 });

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Parrot = require('./parrot.model');
 
 const SupplierSchema = new mongoose.Schema({
 
@@ -17,9 +18,9 @@ const SupplierSchema = new mongoose.Schema({
     required: true,
     unique: true,
     index: true
-  }
+  },
 
-  // parrots: [Parrot.schema]
+  parrots: [Parrot.schema]
 
 }, {
   collection: 'suppliers'
