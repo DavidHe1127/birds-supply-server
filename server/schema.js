@@ -3,6 +3,8 @@ import { makeExecutableSchema, mergeSchemas } from 'graphql-tools';
 import customerQuery from './types/customer/query.graphql';
 import supplierQuery from './types/supplier/query.graphql';
 
+console.log(supplierQuery);
+
 import customerMutation from './types/customer/mutation.graphql';
 
 import resolvers from './resolvers';
@@ -64,17 +66,29 @@ type Customer {
   last_name: String
   email: String
   gender: Gender
-}
+  fucker: Fucker
 
-type Query {
-  customer(email: String): Customer
-  customers: [Customer]
 }
 `;
 
+const root2 = `type Fucker {
+  id: ID!
+}`;
+
+const root3 = `type Query {
+  customer(email: String): Customer
+  customers: [Customer]
+}`;
+
 const supplierSchema = makeExecutableSchema({
-  typeDefs: [root]
+  typeDefs: [root, root2, root3]
 });
+console.log('xc');
+
+
+// const rootSchema = makeExecutableSchema({
+//   typeDefs: [root3]
+// });
 
 const schema = mergeSchemas({
   schemas: [supplierSchema],
