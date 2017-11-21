@@ -2,27 +2,13 @@ import { makeExecutableSchema, mergeSchemas } from 'graphql-tools';
 
 import customerQuery from './types/customer/query.graphql';
 import supplierQuery from './types/supplier/query.graphql';
-
-console.log(supplierQuery);
+import parrotQuery from './types/parrot/query.graphql';
 
 import customerMutation from './types/customer/mutation.graphql';
 
 import resolvers from './resolvers';
 
-// turn type def in template string into executable schema object
-// const customerSchema = makeExecutableSchema({
-//   typeDefs: [customerQuery, customerMutation]
-// });
-
-// const supplierSchema = makeExecutableSchema({
-//   typeDefs: [supplierQuery]
-// });
-
-const linkTypeDef = `
-  extend type SupplierParrotsEdge {
-    node: Parrot
-  }
-`;
+const add = base => (...topping) => [base, ...topping];
 
 const common = `
   interface Node {
@@ -44,55 +30,29 @@ const common = `
   }
 `;
 
-// const root = `
-//   type Query {
-//     viewer: Viewer!
+const addOnTop = add(common);
 
-//     node(
-//       id: ID!
-//     ): Node
-//   }
-// `;
-
-const root = `
-enum Gender {
-  Female
-  Male
-}
-
-type Customer {
-  id: ID!
-  first_name: String
-  last_name: String
-  email: String
-  gender: Gender
-  fucker: Fucker
-
-}
+// turn type def in template string into executable schema object
+const linkTypeDef = `
+  extend type SupplierParrotsEdge {
+    node: Parrot
+  }
 `;
 
-const root2 = `type Fucker {
-  id: ID!
-}`;
-
-const root3 = `type Query {
-  customer(email: String): Customer
-  customers: [Customer]
-}`;
+const parrotSchema = makeExecutableSchema({
+  typeDefs: addOnTop(parrotQuery)
+});
 
 const supplierSchema = makeExecutableSchema({
-  typeDefs: [root, root2, root3]
+  typeDefs: addOnTop(supplierQuery)
 });
-console.log('xc');
 
-
-// const rootSchema = makeExecutableSchema({
-//   typeDefs: [root3]
-// });
+const customerSchema = makeExecutableSchema({
+  typeDefs: addOnTop(customerQuery, customerMutation)
+});
 
 const schema = mergeSchemas({
-  schemas: [supplierSchema],
-  //, common, customerSchema, supplierSchema, linkTypeDef],
+  schemas: [customerSchema, supplierSchema, parrotSchema, linkTypeDef],
   resolvers
 });
 

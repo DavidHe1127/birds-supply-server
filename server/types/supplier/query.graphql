@@ -30,10 +30,9 @@ type SupplierEdge {
 
 type SupplierParrotsEdge {
   cursor: String
-  node: Parrot
 }
 
-type Viewer {
+type Query {
   supplier(id: ID!): Supplier
   suppliers: SupplierConnection
 }

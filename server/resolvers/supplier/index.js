@@ -1,7 +1,7 @@
 const create = require('../createResolverMap')('supplier');
 
 module.exports = {
-  Viewer: create('queries'),
+  Query: create('queries'),
   // Company: {
   //   employees: company => company.employees
   // }

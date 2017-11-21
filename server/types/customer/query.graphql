@@ -11,7 +11,7 @@ type Customer {
   gender: Gender
 }
 
-type Viewer {
+type Query {
   customer(email: String): Customer
   customers: [Customer]
 }
