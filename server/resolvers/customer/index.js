@@ -1,6 +1,6 @@
 const create = require('../createResolverMap')('customer');
 
 module.exports = {
-  Viewer: create('queries'),
+  Query: create('queries'),
   Mutation: create('mutations')
 };
