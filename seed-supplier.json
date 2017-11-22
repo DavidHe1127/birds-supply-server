@@ -1,0 +1,21 @@
+[{
+  "name": "Australia Macaws",
+  "address": "12 Kent Rd Schofields 2762",
+  "code": "australia_macaws",
+  "parrots": [""]
+}, {
+  "name": "Birkshire Birds Farm",
+  "address": "114 Birkshire Rd Birkshire",
+  "code": "birkshire_birds_farm",
+  "parrots": []
+}, {
+  "name": "Birdville",
+  "address": "12 Botany St. LakeTown",
+  "code": "birdville",
+  "parrots": []
+}, {
+  "name": "Parrots House",
+  "address": "17/1 Nile Ave Blacktown",
+  "code": "parrots_house",
+  "parrots": []
+}]
