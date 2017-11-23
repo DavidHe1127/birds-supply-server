@@ -1,0 +1,81 @@
+[{
+  "name": "Sulphur-crested Cockatoo",
+  "code": "sulphur-crested_cockatoo",
+  "size": 40,
+  "mass": 800,
+  "distribution": "Australia/Indonesia",
+  "lifespan": 30,
+  "species": "cockatoos"
+}, {
+  "name": "Palm Cockatoo",
+  "code": "palm_cockatoo",
+  "size": 50,
+  "mass": 750,
+  "distribution": "Australia/New Guinea",
+  "lifespan": 45,
+  "species": "cockatoos"
+}, {
+  "name": "Galah",
+  "code": "galah",
+  "size": 25,
+  "mass": 450,
+  "distribution": "Australia",
+  "lifespan": 25,
+  "species": "cockatoos"
+}, {
+  "name": "Long-billed Corella",
+  "code": "long-billed_corella",
+  "size": 25,
+  "mass": 400,
+  "distribution": "Australia/New Zealand",
+  "lifespan": 20,
+  "species": "cockatoos"
+}, {
+  "name": "Blue-eyed Cockatoo",
+  "code": "blue-eyed_cockatoo",
+  "size": 40,
+  "mass": 800,
+  "distribution": "Papua New Guinea",
+  "lifespan": 40,
+  "species": "cockatoos"
+}, {
+  "name": "Spix Mawcaw",
+  "code": "spix_mawcaw",
+  "size": 80,
+  "mass": 1000,
+  "distribution": "Brazil",
+  "lifespan": 50,
+  "species": "macaws"
+}, {
+  "name": "Green-winged Macaw",
+  "code": "green-winged_macaw",
+  "size": 90,
+  "mass": 1000,
+  "distribution": "Brazil/Peru",
+  "lifespan": 50,
+  "species": "macaws"
+}, {
+  "name": "Scarlet Macaw",
+  "code": "scarlet-macaw",
+  "size": 95,
+  "mass": 950,
+  "distribution": "Brazil/Peru",
+  "lifespan": 60,
+  "species": "macaws"
+}, {
+  "name": "Yellow/Blue Macaw",
+  "code": "yellow_blue_macaw",
+  "size": 90,
+  "mass": 825,
+  "distribution": "Brazil/Peru",
+  "lifespan": 50,
+  "species": "macaws"
+}, {
+  "name": "Military Macaw",
+  "code": "military-macaw",
+  "size": 70,
+  "mass": 900,
+  "distribution": "Bolivia/Peru/Ecuador",
+  "lifespan": 45,
+  "species": "macaws"
+}]

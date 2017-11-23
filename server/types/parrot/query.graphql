@@ -3,7 +3,7 @@ type Parrot implements Node {
   name: String
   size: Int
   mass: Float
-  range: String
+  distribution: String
   lifespan: Int
   species: String
   code: String
