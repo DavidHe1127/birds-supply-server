@@ -22,17 +22,17 @@ mutation addNewCustomer(
 #   "first_name": "James",
 # }
 
-# Update customer
-{
-  setCustomer(input: {
-    _id: "5a042db200cdbc06b7a92c9c"
-    email: "setCustomerdone@david.com.au"
-    })
-}
-
-# Del customer
-{
-  delCustomer(input: {
-      _id: "5a042db200cdbc06b7a92c9c"
-    })
+# add parrot
+mutation {
+  addParrot (input:{
+    name: "caos"
+    size: 40
+    mass: 700
+    lifespan: 99
+    species: amazons
+    distribution: "schofields"
+    code: "xxoo"
+  }) {
+    id
+  }
 }

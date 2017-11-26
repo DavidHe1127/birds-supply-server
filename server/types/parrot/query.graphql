@@ -1,3 +1,10 @@
+enum Species {
+  macaws
+  conures
+  cockatoos
+  amazons
+}
+
 type Parrot implements Node {
   id: ID!
   name: String
@@ -5,7 +12,7 @@ type Parrot implements Node {
   mass: Float
   distribution: String
   lifespan: Int
-  species: String
+  species: Species
   code: String
 }
 

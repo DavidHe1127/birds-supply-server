@@ -5,6 +5,7 @@ import supplierQuery from './types/supplier/query.graphql';
 import parrotQuery from './types/parrot/query.graphql';
 
 import customerMutation from './types/customer/mutation.graphql';
+import parrotMutation from './types/parrot/mutation.graphql';
 
 import resolvers from './resolvers';
 
@@ -40,7 +41,7 @@ const linkTypeDef = `
 `;
 
 const parrotSchema = makeExecutableSchema({
-  typeDefs: addOnTop(parrotQuery)
+  typeDefs: addOnTop(parrotQuery, parrotMutation)
 });
 
 const supplierSchema = makeExecutableSchema({
