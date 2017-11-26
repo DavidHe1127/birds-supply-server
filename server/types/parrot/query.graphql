@@ -22,6 +22,12 @@ type ParrotEdge {
 }
 
 type Query {
-  parrot(id: ID!): Parrot
-  parrots: ParrotConnection
+  parrot(id: ID, code: String): Parrot
+  parrots(
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): ParrotConnection
 }

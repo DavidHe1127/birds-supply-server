@@ -1,15 +1,20 @@
-# basic query
-query getCustomerByEmail {
-  customers(email: "a@abc.com.au") {
-    id
-    first_name
+# all parrots
+query {
+  parrots(first:2) {
+    edges {
+      node {
+        id
+        code
+        name
+        lifespan
+      }
+    }
   }
 }
 
-# with argument
-query getCustomerById($id: ID!) {
-  customers(id: $id) {
-    id
-    first_name
+# a single parrot
+query {
+  parrot(id: "5a1a05b48ca26513ae6c7785") {
+    name
   }
 }

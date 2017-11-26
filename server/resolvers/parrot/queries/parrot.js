@@ -1,10 +1,14 @@
 const Parrot = require('../../../models/parrot.model');
 
-const parrot = (obj, { email }) => {
+const parrot = (obj, { id, code }) => {
   const query = {};
 
-  if (email) {
-    query.email = email;
+  if (id) {
+    query._id = id;
+  }
+
+  if (code) {
+    query.code = code;
   }
 
   return Parrot.findOne(query);

@@ -34,5 +34,11 @@ type SupplierParrotsEdge {
 
 type Query {
   supplier(id: ID!): Supplier
-  suppliers: SupplierConnection
+  suppliers(
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): SupplierConnection
 }
