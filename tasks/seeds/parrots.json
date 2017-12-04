@@ -39,8 +39,8 @@
   "lifespan": 40,
   "species": "cockatoos"
 }, {
-  "name": "Spix Mawcaw",
-  "code": "spix_mawcaw",
+  "name": "Spix Macaw",
+  "code": "spix_macaw",
   "size": 80,
   "mass": 1000,
   "distribution": "Brazil",
@@ -56,7 +56,7 @@
   "species": "macaws"
 }, {
   "name": "Scarlet Macaw",
-  "code": "scarlet-macaw",
+  "code": "scarlet_macaw",
   "size": 95,
   "mass": 950,
   "distribution": "Brazil/Peru",
@@ -64,7 +64,7 @@
   "species": "macaws"
 }, {
   "name": "Yellow/Blue Macaw",
-  "code": "yellow_blue_macaw",
+  "code": "yellow/blue_macaw",
   "size": 90,
   "mass": 825,
   "distribution": "Brazil/Peru",
@@ -72,7 +72,7 @@
   "species": "macaws"
 }, {
   "name": "Military Macaw",
-  "code": "military-macaw",
+  "code": "military_macaw",
   "size": 70,
   "mass": 900,
   "distribution": "Bolivia/Peru/Ecuador",

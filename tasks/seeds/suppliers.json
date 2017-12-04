@@ -2,12 +2,12 @@
   "name": "Australia Macaws",
   "address": "12 Kent Rd Schofields 2762",
   "code": "australia_macaws",
-  "parrots": ["scarlet-macaw", "yellow_blue_macaw", "green-winged_macaw", "spix_mawcaw", "military-macaw"]
+  "parrots": ["scarlet_macaw", "yellow/blue_macaw", "green-winged_macaw", "spix_macaw", "military_macaw"]
 }, {
   "name": "Birkshire Birds Farm",
   "address": "114 Birkshire Rd Birkshire",
   "code": "birkshire_birds_farm",
-  "parrots": ["scarlet-macaw", "long-billed_corella", "blue-eyed_cockatoo"]
+  "parrots": ["scarlet_macaw", "long-billed_corella", "blue-eyed_cockatoo"]
 }, {
   "name": "Birdville",
   "address": "12 Botany St. LakeTown",
