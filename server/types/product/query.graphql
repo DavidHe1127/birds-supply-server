@@ -1,0 +1,31 @@
+type Product implements Node {
+  id: ID!
+  sku: String
+  qty: Int
+  price: Int
+  parrot: ID!
+  supplier: ID!
+}
+
+type ProductConnection {
+  pageInfo: PageInfo!
+  # a list of edges
+  edges: [ProductEdge]
+  count: Int!
+}
+
+type ProductEdge {
+  cursor: String
+  node: Product
+}
+
+type Query {
+  product(id: ID!): Product
+  products(
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): ProductConnection
+}

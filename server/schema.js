@@ -3,6 +3,7 @@ import { makeExecutableSchema, mergeSchemas } from 'graphql-tools';
 import customerQuery from './types/customer/query.graphql';
 import supplierQuery from './types/supplier/query.graphql';
 import parrotQuery from './types/parrot/query.graphql';
+import productQuery from './types/product/query.graphql';
 
 import customerMutation from './types/customer/mutation.graphql';
 import parrotMutation from './types/parrot/mutation.graphql';
@@ -52,8 +53,12 @@ const customerSchema = makeExecutableSchema({
   typeDefs: addOnTop(customerQuery, customerMutation)
 });
 
+const productSchema = makeExecutableSchema({
+  typeDefs: addOnTop(productQuery)
+});
+
 const schema = mergeSchemas({
-  schemas: [customerSchema, supplierSchema, parrotSchema, linkTypeDef],
+  schemas: [customerSchema, supplierSchema, parrotSchema, productSchema, linkTypeDef],
   resolvers
 });
 
