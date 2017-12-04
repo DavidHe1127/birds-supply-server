@@ -3,8 +3,7 @@
 A platform that connects bird lovers and suppliers together
 
 ### TODO
- * Add script to load seed data (add products)
- * Test paginations
+ * Add queries for products
  * Add dataloader
  * Add start script to start mongodb as service (auto-start script done on mac)
  * Add subscriptions
