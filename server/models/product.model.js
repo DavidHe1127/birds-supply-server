@@ -16,10 +16,16 @@ const ProductSchema = new mongoose.Schema(
       type: Number
     },
 
-    link: {
+    parrot: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Parrot'
+    },
+
+    supplier: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Supplier'
     }
+
   },
   {
     collection: 'products'
