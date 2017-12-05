@@ -26,4 +26,12 @@ type Query {
     first: Int
     last: Int
   ): ProductConnection
+  bestSellers(
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+    supplierId: ID!
+  ): ProductConnection
 }
