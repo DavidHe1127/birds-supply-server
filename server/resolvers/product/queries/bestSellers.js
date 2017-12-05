@@ -1,14 +1,15 @@
 const Products = require('../../../models/product.model');
 const { connectionFromArray } = require('graphql-relay');
 
-const products = (obj, args) =>
-  Products.find({})
+const bestSellers = (obj, args) =>
+  Products.find({
+    qty: {
+      $lt: 50
+    }
+  })
+    .limit(4)
     .populate('parrot')
-    .populate({
-      path: 'supplier',
-      select: '-parrots'
-    })
     .exec()
     .then(res => connectionFromArray(res, args));
 
-module.exports = products;
+module.exports = bestSellers;

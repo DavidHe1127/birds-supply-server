@@ -32,6 +32,6 @@ type Query {
     before: String
     first: Int
     last: Int
-    supplierId: ID!
+    supplierId: ID
   ): ProductConnection
 }
