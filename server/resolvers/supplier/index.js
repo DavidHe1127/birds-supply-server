@@ -4,6 +4,6 @@ const { connectionFromArray } = require('graphql-relay');
 module.exports = {
   Query: create('queries'),
   Supplier: {
-    parrotsConnection: (obj, args) => connectionFromArray(obj.parrots, args)
+    parrotsConnection: (obj, args) => connectionFromArray(obj.parrots || [], args)
   }
 };
