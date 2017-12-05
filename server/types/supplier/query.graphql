@@ -33,7 +33,7 @@ type SupplierParrotsEdge {
 }
 
 type Query {
-  supplier(id: ID!): Supplier
+  supplier(id: ID code: String): Supplier
   suppliers(
     skip: Int
     after: String

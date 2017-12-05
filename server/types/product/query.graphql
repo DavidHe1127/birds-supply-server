@@ -3,8 +3,6 @@ type Product implements Node {
   sku: String
   qty: Int
   price: Int
-  parrot: ID!
-  supplier: ID!
 }
 
 type ProductConnection {
