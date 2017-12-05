@@ -7,7 +7,10 @@ const product = (obj, { id, code }) => {
     query._id = id;
   }
 
-  return Product.findOne(query);
+  return Product.findOne(query).populate('parrot').populate({
+    path: 'supplier',
+    select: '-parrots'
+  }).exec();
 };
 
 module.exports = product;

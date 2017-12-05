@@ -1,8 +1,9 @@
 const create = require('../createResolverMap')('supplier');
+const { connectionFromArray } = require('graphql-relay');
 
 module.exports = {
   Query: create('queries'),
-  // Company: {
-  //   employees: company => company.employees
-  // }
+  Supplier: {
+    parrotsConnection: (obj, args) => connectionFromArray(obj.parrots, args)
+  }
 };

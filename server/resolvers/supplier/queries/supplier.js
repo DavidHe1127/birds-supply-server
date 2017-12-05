@@ -11,7 +11,7 @@ const supplier = (obj, { id, code }) => {
     query.code = code;
   }
 
-  return Supplier.findOne(query);
+  return Supplier.findOne(query).populate('parrots');
 };
 
 module.exports = supplier;

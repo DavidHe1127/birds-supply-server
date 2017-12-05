@@ -39,6 +39,11 @@ const linkTypeDef = `
   extend type SupplierParrotsEdge {
     node: Parrot
   }
+
+  extend type Product {
+    parrot: Parrot
+    supplier: Supplier
+  }
 `;
 
 const parrotSchema = makeExecutableSchema({
