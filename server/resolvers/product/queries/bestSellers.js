@@ -7,7 +7,7 @@ const bestSellers = (obj, args) =>
       $lt: 50
     }
   })
-    .limit(4)
+    .limit(3)
     .populate('parrot')
     .exec()
     .then(res => connectionFromArray(res, args));
