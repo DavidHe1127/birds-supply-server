@@ -5,7 +5,8 @@
   "mass": 800,
   "distribution": "Australia/Indonesia",
   "lifespan": 30,
-  "species": "cockatoos"
+  "species": "cockatoos",
+  "description": "The Sulphur-crested Cockatoo is a large white parrot. It has a dark grey-black bill, a distinctive sulphur-yellow crest and a yellow wash on the underside of the wings. Sexes are similar, although the female can be separated at close range by its red-brown eye (darker brown in the male). This is a noisy and conspicuous cockatoo, both at rest and in flight. Young Sulphur-crested Cockatoos resemble the adults."
 }, {
   "name": "Palm Cockatoo",
   "code": "palm_cockatoo",
@@ -13,7 +14,8 @@
   "mass": 750,
   "distribution": "Australia/New Guinea",
   "lifespan": 45,
-  "species": "cockatoos"
+  "species": "cockatoos",
+  "description": "The palm cockatoo also known as the goliath cockatoo or great black cockatoo, is a large smoky-grey or black parrot of the cockatoo family native to New Guinea, Aru Islands, and Cape York Peninsula. It has a very large black beak and prominent red cheek patches."
 }, {
   "name": "Galah",
   "code": "galah",
@@ -21,7 +23,8 @@
   "mass": 450,
   "distribution": "Australia",
   "lifespan": 25,
-  "species": "cockatoos"
+  "species": "cockatoos",
+  "description": "The Galah can be easily identified by its rose-pink head, neck and underparts, with paler pink crown, and grey back, wings and undertail. Birds from the west of Australia have comparatively paler plumage. Galahs have a bouncing acrobatic flight, but spend much of the day sheltering from heat in the foliage of trees and shrubs. Huge noisy flocks of birds congregate and roost together at night."
 }, {
   "name": "Long-billed Corella",
   "code": "long-billed_corella",
@@ -29,7 +32,8 @@
   "mass": 400,
   "distribution": "Australia/New Zealand",
   "lifespan": 20,
-  "species": "cockatoos"
+  "species": "cockatoos",
+  "description": "The Long-billed Corella is a medium-sized white cockatoo with a short crest (not always visible) and short tail, stocky body and a distinctive long upper mandible to its bill. There is a faint yellowish wash on the undersides of its wings and tail, and orange-red splashes on its forehead, throat and an orange-red crescent across its upper breast. The eye ring is pale grey-blue. It is a conspicuous and gregarious species, often seen foraging in large flocks on the ground."
 }, {
   "name": "Blue-eyed Cockatoo",
   "code": "blue-eyed_cockatoo",
@@ -37,7 +41,8 @@
   "mass": 800,
   "distribution": "Papua New Guinea",
   "lifespan": 40,
-  "species": "cockatoos"
+  "species": "cockatoos",
+  "description": "The blue-eyed cockatoo is a large, approximately 50 centimetres (20 in) long, mainly white cockatoo with a mobile crest, a black beak, and a light blue rim of featherless skin around each eye, that gives this species its name."
 }, {
   "name": "Spix Macaw",
   "code": "spix_macaw",
@@ -45,7 +50,8 @@
   "mass": 1000,
   "distribution": "Brazil",
   "lifespan": 50,
-  "species": "macaws"
+  "species": "macaws",
+  "description": "The bird is a medium-size parrot weighing about 300 grams (0.66 lb), smaller than most of the large macaws. Its plumage is various shades of blue, with a grey-blue head, light blue underparts, and vivid blue upperparts. Males and females are almost identical in appearance, however the females are slightly smaller on average."
 }, {
   "name": "Green-winged Macaw",
   "code": "green-winged_macaw",
@@ -53,7 +59,8 @@
   "mass": 1000,
   "distribution": "Brazil/Peru",
   "lifespan": 50,
-  "species": "macaws"
+  "species": "macaws",
+  "description": "This is the largest of the Ara genus, widespread in the forests and woodlands of northern and central South America. However, in common with other macaws, in recent years there has been a marked decline in its numbers due to habitat loss and illegal capture for the parrot trade."
 }, {
   "name": "Scarlet Macaw",
   "code": "scarlet_macaw",
@@ -61,7 +68,8 @@
   "mass": 950,
   "distribution": "Brazil/Peru",
   "lifespan": 60,
-  "species": "macaws"
+  "species": "macaws",
+  "description": "The scarlet macaw is a large red, yellow, and blue South American parrot, a member of a large group of Neotropical parrots called macaws. It is native to humid evergreen forests of tropical South America. Range extends from south-eastern Mexico to the Peruvian Amazon, Colombia, Bolivia, Venezuela and Brazil in lowlands up to 500 m up to 1,000 m."
 }, {
   "name": "Yellow/Blue Macaw",
   "code": "yellow/blue_macaw",
@@ -69,7 +77,8 @@
   "mass": 825,
   "distribution": "Brazil/Peru",
   "lifespan": 50,
-  "species": "macaws"
+  "species": "macaws",
+  "description": "The blue-and-yellow macaw, also known as the blue-and-gold macaw, is a large South American parrot with blue top parts and yellow under parts. It is a member of the large group of neotropical parrots known as macaws. It inhabits forest (especially varzea, but also in open sections of terra firme or unflooded forest), woodland and savannah of tropical South America."
 }, {
   "name": "Military Macaw",
   "code": "military_macaw",
@@ -77,5 +86,6 @@
   "mass": 900,
   "distribution": "Bolivia/Peru/Ecuador",
   "lifespan": 45,
-  "species": "macaws"
+  "species": "macaws",
+  "description": "The military macaw is a large parrot and a medium-sized macaw. Though considered vulnerable as a wild species, it is still commonly found in the pet trade industry. It is found in the forests of Mexico and South America. It gets its name from its predominantly green plumage resembling a military parade uniform."
 }]

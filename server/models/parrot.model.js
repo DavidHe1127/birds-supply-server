@@ -41,6 +41,11 @@ const ParrotSchema = new mongoose.Schema({
     required: true,
     unique: true,
     index: true
+  },
+
+  description: {
+    type: String,
+    required: true
   }
 
 }, {
