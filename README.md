@@ -3,7 +3,7 @@
 A platform that connects bird lovers and suppliers together
 
 ### TODO
- * Add queries for products
+ * Deploy it on EC2 using docker
  * Add dataloader
  * Add start script to start mongodb as service (auto-start script done on mac)
  * Add subscriptions
