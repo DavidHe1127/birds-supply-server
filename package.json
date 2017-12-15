@@ -10,7 +10,7 @@
     "start:prod": "NODE_ENV=production node ./build",
     "mongo": "mongo graphql-playpen",
     "seed": "node ./tasks/seed",
-    "build": "npm run clean && babel -d ./build ./server --plugins babel-plugin-inline-import -e js,graphql",
+    "build": "npm run clean && babel -d ./build ./server --plugins babel-plugin-inline-import",
     "clean": "rm -rf build"
   },
   "keywords": [
