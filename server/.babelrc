@@ -1,7 +1,14 @@
 {
   "passPerPreset": true,
   "presets": [
-    "es2015",
-    "stage-0"
+    [
+      "env",
+      {
+        "loose": true,
+        "targets": {
+          "node": "8.3.0"
+        }
+      }
+    ]
   ]
 }
