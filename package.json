@@ -7,11 +7,11 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./server --exec \"cross-env BABEL_DISABLE_CACHE=1 babel-node --plugins babel-plugin-inline-import\" -e js,graphql",
-    "start:prod": "NODE_ENV=production node ./build",
+    "start:prod": "npm run build && NODE_ENV=production node ./build",
     "mongo": "mongo graphql-playpen",
     "seed": "node ./tasks/seed",
     "build": "npm run clean && babel -d ./build ./server --plugins babel-plugin-inline-import",
-    "clean": "rm -rf build"
+    "clean:build": "rm -rf build"
   },
   "keywords": [
     "relay-modern",
