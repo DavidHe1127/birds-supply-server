@@ -10,9 +10,10 @@ WORKDIR /usr/local/app/
 
 RUN npm i --production
 
-EXPOSE 3000
-
-ENTRYPOINT []
-
 # Bundle app source
 COPY . .
+
+EXPOSE 3000
+
+CMD ['npm', 'run', 'start:prod']
+

@@ -11,7 +11,7 @@
     "mongo": "mongo graphql-playpen",
     "seed": "node ./tasks/seed",
     "build": "npm run clean && babel -d ./build ./server --plugins babel-plugin-inline-import",
-    "clean:build": "rm -rf build"
+    "clean": "rm -rf build"
   },
   "keywords": [
     "relay-modern",
