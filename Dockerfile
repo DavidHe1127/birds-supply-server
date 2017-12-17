@@ -2,18 +2,22 @@
 # it has node.js and npm already
 FROM node:carbon
 
-RUN mkdir -p /usr/local/app/
+RUN mkdir -p /usr/src/app
 
-COPY package*.json ./
+COPY package*.json /usr/src/app/
 
-WORKDIR /usr/local/app/
+WORKDIR /usr/src/app/
 
-RUN npm i --production
+RUN npm i --only=production
 
 # Bundle app source
-COPY . .
+RUN mkdir build
 
-EXPOSE 3000
+COPY build /usr/src/app/build/
 
-CMD ['npm', 'run', 'start:prod']
+EXPOSE 4000
 
+# CMD ['npm', 'run', 'start:prod']
+# CMD ['node', './build']
+
+ENTRYPOINT ["npm", "run", "production"]
