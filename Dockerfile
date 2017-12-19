@@ -11,13 +11,12 @@ WORKDIR /usr/src/app/
 RUN npm i --only=production
 
 # Bundle app source
-RUN mkdir build
+RUN mkdir build tasks
 
 COPY build /usr/src/app/build/
+COPY tasks /usr/src/app/tasks/
+COPY config /usr/src/app/config/
 
 EXPOSE 4000
-
-# CMD ['npm', 'run', 'start:prod']
-# CMD ['node', './build']
 
 ENTRYPOINT ["npm", "run", "production"]

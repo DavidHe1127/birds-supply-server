@@ -7,7 +7,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./server --exec \"cross-env BABEL_DISABLE_CACHE=1 babel-node --plugins babel-plugin-inline-import\" -e js,graphql",
-    "production": "NODE_ENV=production node ./build",
+    "production": "NODE_ENV=production npm run seed && node ./build",
     "mongo": "mongo graphql-playpen",
     "seed": "node ./tasks/seed",
     "build": "npm run clean && babel -d ./build ./server --plugins babel-plugin-inline-import",

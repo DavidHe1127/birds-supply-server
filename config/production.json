@@ -1,3 +1,5 @@
 {
-
+  "mongo": {
+    "uri": "mongodb://mongo:27017/graphql-playpen"
+  }
 }
