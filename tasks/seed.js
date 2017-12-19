@@ -1,9 +1,15 @@
 const mongoose = require('mongoose');
 
-const connect = require('../server/db/conn');
-const Parrots = require('../server/models/parrot.model');
-const Suppliers = require('../server/models/supplier.model');
-const Products = require('../server/models/product.model');
+let root = '../server';
+
+if (process.env.NODE_ENV === 'production') {
+  root = '../build';
+}
+
+const connect = require(`${root}/db/conn`);
+const Parrots = require(`${root}/models/parrot.model`);
+const Suppliers = require(`${root}/models/supplier.model`);
+const Products = require(`${root}/models/product.model`);
 
 const parrots = require('./seeds/parrots.json');
 const suppliers = require('./seeds/suppliers.json');
