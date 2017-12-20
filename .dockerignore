@@ -1,5 +1,5 @@
 # exclude local modules and debug logs from being copied onto your Docker image and possibly
 # overwriting modules installed within your image
-# build
 node_modules
 npm-debug.log
+.env
