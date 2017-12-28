@@ -25,6 +25,7 @@ type Query {
     before: String
     first: Int
     last: Int
+    supplierId: ID
   ): ProductConnection
   bestSellers(
     skip: Int
