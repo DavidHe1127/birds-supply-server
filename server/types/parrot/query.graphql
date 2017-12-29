@@ -38,4 +38,5 @@ type Query {
     first: Int
     last: Int
   ): ParrotConnection
+  parrotsToProduct(supplierId: ID): ParrotConnection
 }
