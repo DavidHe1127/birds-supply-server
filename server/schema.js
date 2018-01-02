@@ -7,6 +7,7 @@ import productQuery from './types/product/query.graphql';
 
 import customerMutation from './types/customer/mutation.graphql';
 import parrotMutation from './types/parrot/mutation.graphql';
+import productMutation from './types/product/mutation.graphql';
 
 import resolvers from './resolvers';
 
@@ -59,7 +60,7 @@ const customerSchema = makeExecutableSchema({
 });
 
 const productSchema = makeExecutableSchema({
-  typeDefs: addOnTop(productQuery)
+  typeDefs: addOnTop(productQuery, productMutation)
 });
 
 const schema = mergeSchemas({
