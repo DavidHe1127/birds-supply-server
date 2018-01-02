@@ -1,0 +1,9 @@
+input addProductInput {
+  price: Int
+  qty: Int
+  code: String
+}
+
+type Mutation {
+  addProduct(input: addProductInput!): Product
+}
