@@ -3,7 +3,7 @@ const Suppliers = require('../../../models/supplier.model');
 const Parrots = require('../../../models/parrot.model');
 
 const addProduct = async (obj, args) => {
-  const { qty, code, price } = args.input;
+  const { qty, parrotCode, price } = args.input;
 
   const supplierId = await Suppliers.findOne(
     {
@@ -12,15 +12,16 @@ const addProduct = async (obj, args) => {
     '_id code'
   );
 
-  const { _id: parrotId, sku } = await Parrots.findOne({
-    code
+  const { _id: parrotId } = await Parrots.findOne({
+    parrotCode
   });
 
   const product = new Products({
     parrot: parrotId,
     supplier: supplierId,
+    price,
     qty,
-    sku: code
+    sku: parrotCode
   });
 
   return product.save();
