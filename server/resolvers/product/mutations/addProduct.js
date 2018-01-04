@@ -13,7 +13,7 @@ const addProduct = async (obj, args) => {
   );
 
   const { _id: parrotId } = await Parrots.findOne({
-    parrotCode
+    code: parrotCode
   });
 
   const product = new Products({
