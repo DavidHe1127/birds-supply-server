@@ -1,7 +1,7 @@
 input addProductInput {
   price: Int
   qty: Int
-  code: String
+  parrotCode: String
 }
 
 type Mutation {
