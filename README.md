@@ -3,8 +3,8 @@
 A platform that connects bird lovers and suppliers together
 
 ### TODO
- * Add delete product mutation
  * Add edit product mutation
+ * Add validations
  * Add subscriptions
  * Add dataloader
 
