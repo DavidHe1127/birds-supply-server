@@ -4,6 +4,11 @@ input addProductInput {
   parrotCode: String
 }
 
+input delProductInput {
+  id: ID!
+}
+
 type Mutation {
   addProduct(input: addProductInput!): Product
+  delProduct(input: delProductInput!): Product
 }
