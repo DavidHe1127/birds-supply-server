@@ -2,21 +2,18 @@ input addProductInput {
   price: Int
   qty: Int
   parrotCode: String
-  clientMutationId: String!
 }
 
 input delProductInput {
   id: ID!
-  clientMutationId: String!
 }
 
 type addProductPayload {
   product: Product
-  clientMutationId: String!
 }
 
 type delProductPayload {
-  clientMutationId: String!
+  deletedProductId: String!
 }
 
 type Mutation {
