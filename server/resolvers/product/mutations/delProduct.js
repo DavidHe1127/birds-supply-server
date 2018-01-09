@@ -8,7 +8,15 @@ const delProduct = async (obj, args) => {
     params._id = id;
   }
 
-  return Products.findOneAndRemove(params);
+  var doc = await Products.findOneAndRemove(params);
+
+  if (doc) {
+    return {
+      deletedProductId: doc._id
+    };
+  }
+
+  return null;
 };
 
 module.exports = delProduct;
