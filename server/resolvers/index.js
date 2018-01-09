@@ -4,6 +4,20 @@ import parrotResolvers from './parrot';
 import productResolvers from './product';
 
 const merge = require('lodash.merge');
-const resolvers = mergeInfo => merge(customerResolvers, supplierResolvers, parrotResolvers, productResolvers);
+
+const idResolver = {
+  Query: {
+    id: () => 'dGhpcyBpcyBkYXZpZCBtciBoZSdzIHRlc3Q='
+  }
+};
+
+const resolvers = mergeInfo =>
+  merge(
+    idResolver,
+    customerResolvers,
+    supplierResolvers,
+    parrotResolvers,
+    productResolvers
+  );
 
 export default resolvers;
