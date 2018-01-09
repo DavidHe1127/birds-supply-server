@@ -45,6 +45,10 @@ const linkTypeDef = `
     parrot: Parrot
     supplier: Supplier
   }
+
+  extend type Query {
+    id: ID!
+  }
 `;
 
 const parrotSchema = makeExecutableSchema({
