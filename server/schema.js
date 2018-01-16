@@ -45,11 +45,11 @@ const linkTypeDef = `
     parrot: Parrot
     supplier: Supplier
   }
-
-  extend type Query {
-    id: ID!
-  }
 `;
+
+// extend type Query {
+//   id: ID!
+// }
 
 const parrotSchema = makeExecutableSchema({
   typeDefs: addOnTop(parrotQuery, parrotMutation)
@@ -68,7 +68,13 @@ const productSchema = makeExecutableSchema({
 });
 
 const schema = mergeSchemas({
-  schemas: [customerSchema, supplierSchema, parrotSchema, productSchema, linkTypeDef],
+  schemas: [
+    customerSchema,
+    supplierSchema,
+    parrotSchema,
+    productSchema,
+    linkTypeDef
+  ],
   resolvers
 });
 
