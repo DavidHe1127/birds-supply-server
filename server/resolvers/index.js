@@ -5,15 +5,15 @@ import productResolvers from './product';
 
 const merge = require('lodash.merge');
 
-const idResolver = {
-  Query: {
-    id: () => 'dGhpcyBpcyBkYXZpZCBtciBoZSdzIHRlc3Q='
-  }
-};
+// const idResolver = {
+//   Query: {
+//     id: () => 'dGhpcyBpcyBkYXZpZCBtciBoZSdzIHRlc3Q='
+//   }
+// };
 
 const resolvers = mergeInfo =>
   merge(
-    idResolver,
+    // idResolver,
     customerResolvers,
     supplierResolvers,
     parrotResolvers,
