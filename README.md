@@ -2,6 +2,10 @@
 
 A platform that connects bird lovers and suppliers together
 
+### How to run the app
+ * You need mongodb server run before run `npm start`
+ * Run `npm run seed` to load seeds data - only do it once
+
 ### TODO
  * Refactor resolvers and types config
  * Add edit product mutation
