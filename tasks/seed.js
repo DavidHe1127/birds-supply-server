@@ -1,9 +1,9 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-let root = '../server';
+let root = "../server";
 
-if (process.env.NODE_ENV === 'production') {
-  root = '../build';
+if (process.env.NODE_ENV === "production") {
+  root = "../build";
 }
 
 const connect = require(`${root}/db/conn`);
@@ -11,17 +11,25 @@ const Parrots = require(`${root}/models/parrot.model`);
 const Suppliers = require(`${root}/models/supplier.model`);
 const Products = require(`${root}/models/product.model`);
 
-const parrots = require('./seeds/parrots.json');
-const suppliers = require('./seeds/suppliers.json');
-const products = require('./seeds/products.json');
+const parrots = require("./seeds/parrots.json");
+const suppliers = require("./seeds/suppliers.json");
+const products = require("./seeds/products.json");
 
 // IIFE
 (async () => {
-  connect();
+  await connect();
 
-  await mongoose.connection.collections.suppliers.drop();
-  await mongoose.connection.collections.parrots.drop();
-  await mongoose.connection.collections.products.drop();
+  for (const model of [Parrots, Suppliers, Products]) {
+    const list = await model.db.db
+      .listCollections({
+        name: model.collection.name
+      })
+      .toArray();
+
+    if (list.length !== 0) {
+      await model.collection.drop();
+    }
+  }
 
   const syncedParrots = await Parrots.insertMany(parrots);
 
