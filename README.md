@@ -7,8 +7,8 @@ A platform that connects bird lovers and suppliers together
  * Run `npm run seed` to load seeds data - only do it once
 
 ### TODO
- * Refactor resolvers and types config
  * Add validations
+ * Refactor resolvers and types config
  * Add subscriptions
  * Add dataloader
 
