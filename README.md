@@ -8,7 +8,6 @@ A platform that connects bird lovers and suppliers together
 
 ### TODO
  * Refactor resolvers and types config
- * Add edit product mutation
  * Add validations
  * Add subscriptions
  * Add dataloader
