@@ -8,6 +8,12 @@ input delProductInput {
   id: ID!
 }
 
+input setProductInput {
+  id: ID!
+  qty: Int
+  price: Int
+}
+
 type addProductPayload {
   product: Product
 }
@@ -16,7 +22,12 @@ type delProductPayload {
   deletedProductId: String!
 }
 
+type setProductPayload {
+  product: Product
+}
+
 type Mutation {
   addProduct(input: addProductInput!): addProductPayload
   delProduct(input: delProductInput!): delProductPayload
+  setProduct(input: setProductInput!): setProductPayload
 }
