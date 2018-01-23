@@ -1,6 +1,6 @@
-const Products = require('../../../models/product.model');
-const Suppliers = require('../../../models/supplier.model');
-const Parrots = require('../../../models/parrot.model');
+const Products = require('../../models/product.model');
+const Suppliers = require('../../models/supplier.model');
+const Parrots = require('../../models/parrot.model');
 
 const addProduct = async (obj, args) => {
   const { qty, parrotCode, price } = args.input;

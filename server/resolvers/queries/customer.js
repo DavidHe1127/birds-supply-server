@@ -1,4 +1,4 @@
-const Customer = require('../../../models/customer.model');
+const Customer = require('../../models/customer.model');
 
 const customer = (obj, { email }) => {
   const query = {};

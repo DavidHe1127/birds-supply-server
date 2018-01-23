@@ -1,4 +1,4 @@
-const Parrot = require('../../../models/parrot.model');
+const Parrot = require('../../models/parrot.model');
 
 const parrot = (obj, { id, code }) => {
   const query = {};
