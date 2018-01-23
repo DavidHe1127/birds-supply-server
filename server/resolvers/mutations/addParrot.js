@@ -1,4 +1,4 @@
-const Parrot = require('../../../models/parrot.model');
+const Parrot = require('../../models/parrot.model');
 
 const addParrot = (root, args) => {
   const { name, size, mass, distribution, lifespan, species, code } = args.input;

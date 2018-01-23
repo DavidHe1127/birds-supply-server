@@ -32,7 +32,6 @@
     "graphql-relay": "^0.5.3",
     "graphql-tag": "^2.5.0",
     "graphql-tools": "^2.7.2",
-    "lodash.merge": "^4.6.0",
     "mongodb": "^2.2.33",
     "mongoose": "^4.13.0",
     "restify": "^5.2.0",

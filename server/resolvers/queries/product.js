@@ -1,4 +1,4 @@
-const Product = require('../../../models/product.model');
+const Product = require('../../models/product.model');
 
 const product = (obj, { id, code }) => {
   const query = {};

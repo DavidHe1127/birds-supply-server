@@ -1,9 +1,16 @@
-import customerResolvers from './customer';
-import supplierResolvers from './supplier';
-import parrotResolvers from './parrot';
-import productResolvers from './product';
+const { connectionFromArray } = require('graphql-relay');
+const glob = require('glob');
 
-const merge = require('lodash.merge');
+const loadResolvers = type =>
+  glob
+    .sync(`${__dirname}/${type}/*.js`, {
+      nosort: true
+    })
+    .reduce((prev, next) => {
+      const resolver = require(next);
+      prev[resolver.name] = resolver;
+      return prev;
+    }, {});
 
 // const idResolver = {
 //   Query: {
@@ -11,13 +18,13 @@ const merge = require('lodash.merge');
 //   }
 // };
 
-const resolvers = mergeInfo =>
-  merge(
-    // idResolver,
-    customerResolvers,
-    supplierResolvers,
-    parrotResolvers,
-    productResolvers
-  );
+const resolvers = {
+  Query: loadResolvers('queries'),
+  Mutation: loadResolvers('mutations'),
+  Supplier: {
+    parrotsConnection: (obj, args) =>
+      connectionFromArray(obj.parrots || [], args)
+  }
+};
 
 export default resolvers;

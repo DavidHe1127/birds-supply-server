@@ -1,4 +1,4 @@
-const Customer = require('../../../models/customer.model');
+const Customer = require('../../models/customer.model');
 
 const setCustomer = async (root, args) => {
   const { email, _id } = args.input;

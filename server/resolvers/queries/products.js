@@ -1,5 +1,5 @@
-const Products = require('../../../models/product.model');
-const Suppliers = require('../../../models/supplier.model');
+const Products = require('../../models/product.model');
+const Suppliers = require('../../models/supplier.model');
 
 const { connectionFromArray } = require('graphql-relay');
 

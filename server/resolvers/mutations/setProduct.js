@@ -1,4 +1,4 @@
-const Products = require('../../../models/product.model');
+const Products = require('../../models/product.model');
 
 const setProduct = async (obj, args) => {
   const { id, qty, price } = args.input;

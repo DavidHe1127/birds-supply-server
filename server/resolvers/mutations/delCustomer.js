@@ -1,4 +1,4 @@
-const Customer = require('../../../models/customer.model');
+const Customer = require('../../models/customer.model');
 
 const delCustomer = (root, args) => {
   const { _id } = args.input;
