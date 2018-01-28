@@ -16,7 +16,7 @@ const products = async (obj, args) => {
   }
 
   // - excludes field
-  const productsDB = Products.find(query)
+  const productsDB = await Products.find(query)
     .populate('parrot')
     .populate({
       path: 'supplier',
