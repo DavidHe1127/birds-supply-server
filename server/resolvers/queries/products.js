@@ -3,7 +3,7 @@ const Suppliers = require('../../models/supplier.model');
 
 const { connectionFromArray } = require('graphql-relay');
 
-const products = async (obj, args) => {
+const products = async (obj, args, ctx) => {
   const query = {};
 
   if (args.supplierId) {
