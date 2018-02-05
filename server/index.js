@@ -29,7 +29,12 @@ server.use(cors.actual);
 server.use(restify.plugins.bodyParser());
 server.use(restify.plugins.queryParser());
 
-server.post('/graphql', graphqlRestify(graphQLOptions));
+server.post('/graphql', graphqlRestify(req => ({
+  schema,
+  context: {
+    auth: 'xxx'
+  }
+})));
 server.get('/graphql', graphqlRestify(graphQLOptions));
 
 server.get('/graphiql', graphiqlRestify({ endpointURL: '/graphql' }));
