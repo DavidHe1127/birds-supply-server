@@ -10,6 +10,7 @@ import parrotMutation from './types/parrot/mutation.graphql';
 import productMutation from './types/product/mutation.graphql';
 
 import resolvers from './resolvers';
+import directiveResolvers from './directives';
 
 const add = base => (...topping) => [base, ...topping];
 
@@ -17,6 +18,9 @@ const common = `
   interface Node {
     id: ID!
   }
+
+  directive @isAuthenticated on QUERY | FIELD
+  directive @hasScope(scope: [String]) on QUERY | FIELD
 
   type PageInfo {
     # When paginating forwards, are there more items?
@@ -75,7 +79,8 @@ const schema = mergeSchemas({
     productSchema,
     linkTypeDef
   ],
-  resolvers
+  resolvers,
+  directiveResolvers
 });
 
 export { schema };

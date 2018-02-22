@@ -33,7 +33,7 @@ type SupplierParrotsEdge {
 }
 
 type Query {
-  supplier(id: ID code: String): Supplier
+  supplier(id: ID code: String): Supplier @isAuthenticated
   suppliers(
     skip: Int
     after: String
