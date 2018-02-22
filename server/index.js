@@ -7,7 +7,7 @@ const corsMiddleware = require('restify-cors-middleware');
 const cors = corsMiddleware({
   preflightMaxAge: 5,
   origins: ['*'],
-  allowHeaders: ['API-Token'],
+  allowHeaders: ['API-Token', 'Authorization'],
   exposeHeaders: ['API-Token-Expiry']
 });
 
@@ -30,11 +30,9 @@ server.use(restify.plugins.bodyParser());
 server.use(restify.plugins.queryParser());
 
 server.post('/graphql', graphqlRestify(req => ({
-  schema,
-  context: {
-    auth: 'xxx'
-  }
+  schema
 })));
+
 server.get('/graphql', graphqlRestify(graphQLOptions));
 
 server.get('/graphiql', graphiqlRestify({ endpointURL: '/graphql' }));
