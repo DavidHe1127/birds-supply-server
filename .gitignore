@@ -12,3 +12,6 @@ yarn-error.log*
 
 # Temp folder
 tmp
+
+# aws config
+config.json
