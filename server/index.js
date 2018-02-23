@@ -1,6 +1,6 @@
 import restify from 'restify';
 import { graphqlRestify, graphiqlRestify } from 'apollo-server-restify';
-import schema from './index';
+import schema from './schema';
 import auth from './auth';
 
 const corsMiddleware = require('restify-cors-middleware');
@@ -22,8 +22,6 @@ const server = restify.createServer({
   title: 'GraphQL Server'
 });
 
-const graphQLOptions = { schema };
-
 server.pre(cors.preflight);
 server.use(cors.actual);
 
@@ -34,7 +32,9 @@ server.post('/graphql', graphqlRestify(req => ({
   schema
 })));
 
-server.get('/graphql', graphqlRestify(graphQLOptions));
+server.get('/graphql', graphqlRestify({
+  schema
+}));
 
 server.get('/graphiql', graphiqlRestify({ endpointURL: '/graphql' }));
 
