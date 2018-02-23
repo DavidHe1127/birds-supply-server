@@ -4,6 +4,7 @@ import customerQuery from './types/customer/query.graphql';
 import supplierQuery from './types/supplier/query.graphql';
 import parrotQuery from './types/parrot/query.graphql';
 import productQuery from './types/product/query.graphql';
+import userQuery from './types/user/query.graphql';
 
 import customerMutation from './types/customer/mutation.graphql';
 import parrotMutation from './types/parrot/mutation.graphql';
@@ -49,6 +50,16 @@ const linkTypeDef = `
     parrot: Parrot
     supplier: Supplier
   }
+
+  extend type User {
+    products(
+      skip: Int
+      after: String
+      before: String
+      first: Int
+      last: Int
+    ): ProductConnection
+  }
 `;
 
 // extend type Query {
@@ -71,12 +82,17 @@ const productSchema = makeExecutableSchema({
   typeDefs: addOnTop(productQuery, productMutation)
 });
 
+const userSchema = makeExecutableSchema({
+  typeDefs: addOnTop(userQuery)
+});
+
 const schema = mergeSchemas({
   schemas: [
     customerSchema,
     supplierSchema,
     parrotSchema,
     productSchema,
+    userSchema,
     linkTypeDef
   ],
   resolvers,
