@@ -1,0 +1,249 @@
+# Common
+enum Gender {
+  Female
+  Male
+}
+
+enum Species {
+  macaws
+  conures
+  cockatoos
+  amazons
+}
+
+interface Node {
+  id: ID!
+}
+
+directive @isAuthenticated on QUERY | FIELD
+directive @hasScope(scope: [String]) on QUERY | FIELD
+
+type PageInfo {
+  # When paginating forwards, are there more items?
+  hasNextPage: Boolean
+  # When paginating backwards, are there more items?
+  hasPreviousPage: Boolean
+  # When paginating backwards, the cursor to continue.
+  startCursor: String
+  # When paginating forwards, the cursor to continue.
+  endCursor: String
+}
+
+# Customer
+type Customer {
+  id: ID!
+  first_name: String
+  last_name: String
+  email: String
+  gender: Gender
+}
+
+input addCustomerInput {
+  first_name: String
+  last_name: String
+  email: String
+  gender: Gender
+}
+
+input setCustomerInput {
+  _id: ID!
+  email: String
+}
+
+input delCustomerInput {
+  _id: ID!
+  email: String
+}
+
+# Parrot
+type Parrot implements Node {
+  id: ID!
+  name: String
+  size: Int
+  mass: Float
+  distribution: String
+  description: String
+  lifespan: Int
+  species: Species
+  code: String
+}
+
+input addParrotInput {
+  name: String
+  size: Int
+  mass: Int
+  distribution: String
+  lifespan: Int
+  species: Species
+  code: String
+}
+
+type ParrotConnection {
+  pageInfo: PageInfo!
+  # a list of edges
+  edges: [ParrotEdge]
+  count: Int!
+}
+
+type ParrotEdge {
+  cursor: String
+  node: Parrot
+}
+
+# Product
+type Product implements Node {
+  id: ID!
+  sku: String
+  qty: Int
+  price: Int
+  parrot: Parrot
+  supplier: Supplier
+}
+
+type ProductConnection {
+  pageInfo: PageInfo!
+  # a list of edges
+  edges: [ProductEdge]
+  count: Int!
+}
+
+type ProductEdge {
+  cursor: String
+  node: Product
+}
+
+input addProductInput {
+  price: Int
+  qty: Int
+  parrotCode: String
+}
+
+input delProductInput {
+  id: ID!
+}
+
+input setProductInput {
+  id: ID!
+  qty: Int
+  price: Int
+}
+
+type addProductPayload {
+  product: Product
+}
+
+type delProductPayload {
+  deletedProductId: String!
+}
+
+type setProductPayload {
+  product: Product
+}
+
+# Supplier
+type Supplier implements Node {
+  id: ID!
+  name: String
+  address: String
+  code: String!
+  parrotsConnection(
+    first: Int
+    after: String
+    last: Int
+    before: String
+  ): SupplierParrotsConnection
+}
+
+type SupplierConnection {
+  pageInfo: PageInfo!
+  # a list of edges
+  edges: [SupplierEdge]
+  count: Int!
+}
+
+type SupplierParrotsConnection {
+  pageInfo: PageInfo!
+  edges: [SupplierParrotsEdge]
+}
+
+type SupplierEdge {
+  cursor: String
+  node: Supplier
+}
+
+type SupplierParrotsEdge {
+  cursor: String
+  node: Parrot
+}
+
+# User
+type User implements Node {
+  id: ID!
+  products(
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): ProductConnection
+}
+
+#########################################################################################
+
+# Query
+type Query {
+  customer(email: String): Customer
+  customers: [Customer]
+
+  parrot(id: ID, code: String): Parrot
+  parrots(
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): ParrotConnection
+  parrotsToProduct(supplierId: ID): ParrotConnection
+
+  product(id: ID!): Product
+  products(
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+    supplierId: ID
+  ): ProductConnection
+  bestSellers(
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+    supplierId: ID
+  ): ProductConnection
+
+  supplier(id: ID code: String): Supplier @isAuthenticated
+  suppliers(
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+  ): SupplierConnection
+
+  viewer: User @isAuthenticated
+}
+
+# Mutation
+type Mutation {
+  addParrot(input: addParrotInput!): Parrot
+
+  addCustomer(input: addCustomerInput): Customer
+  setCustomer(input: setCustomerInput): Customer
+  delCustomer(input: delCustomerInput): Customer
+
+  addProduct(input: addProductInput!): addProductPayload
+  delProduct(input: delProductInput!): delProductPayload
+  setProduct(input: setProductInput!): setProductPayload
+}
