@@ -1,7 +1,0 @@
-type User implements Node {
-  id: ID!
-}
-
-type Query {
-  viewer: User @isAuthenticated
-}
