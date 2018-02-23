@@ -1,6 +1,6 @@
 import restify from 'restify';
 import { graphqlRestify, graphiqlRestify } from 'apollo-server-restify';
-import schema from './schema';
+import schema from './index';
 import auth from './auth';
 
 const corsMiddleware = require('restify-cors-middleware');
