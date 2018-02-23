@@ -1,19 +1,19 @@
+import auth from '../auth';
+
 const {AuthorizationError} = require('../errors');
-const cognito = require('../cognito');
 
 const directiveResolvers = {
   isAuthenticated: (next, source, args, context) => {
-    console.log('xcxcxc');
-    const token = context.headers.authorization;
+    const token = context.headers.Authorization;
     if (!token) {
       throw new AuthorizationError({
         message: 'You must supply a JWT for authorization!'
       });
     }
     try {
-      const decoded = cognito.verify(token);
-
+      const decoded = auth.verify(token.slice(7));
       context.user = decoded;
+      console.log(decoded)
       return next();
     } catch (err) {
       throw new AuthorizationError({
@@ -23,7 +23,7 @@ const directiveResolvers = {
   },
 
   hasScope: (next, source, args, context) => {
-    const token = context.headers.authorization;
+    const token = context.headers.Authorization;
     const expectedScopes = args.scope;
     if (!token) {
       throw new AuthorizationError({
@@ -31,7 +31,7 @@ const directiveResolvers = {
       });
     }
     try {
-      const decoded = cognito.verify(token);
+      const decoded = auth.verify(token);
       const scopes = decoded.scope.split(' ');
       if (expectedScopes.some(scope => scopes.indexOf(scope) !== -1)) {
         return next();

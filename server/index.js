@@ -29,9 +29,15 @@ server.use(restify.plugins.bodyParser());
 server.use(restify.plugins.queryParser());
 
 server.post('/graphql', graphqlRestify(req => ({
-  schema
+  schema,
+  context: {
+    headers: {
+      Authorization: req.header('Authorization')
+    }
+  }
 })));
 
+// for relay to get schema
 server.get('/graphql', graphqlRestify({
   schema
 }));
