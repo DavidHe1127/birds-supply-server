@@ -24,6 +24,11 @@ const ProductSchema = new mongoose.Schema(
     supplier: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Supplier'
+    },
+
+    createdBy: {
+      type: String,
+      required: true
     }
 
   },
