@@ -24,7 +24,14 @@ const resolvers = {
   Supplier: {
     parrotsConnection: (obj, args) =>
       connectionFromArray(obj.parrots || [], args)
+  },
+
+  User: {
+    products: user => {
+      return user.products;
+    }
   }
+
 };
 
 export default resolvers;

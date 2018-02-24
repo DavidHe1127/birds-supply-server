@@ -13,7 +13,6 @@ const directiveResolvers = {
     try {
       const decoded = auth.verify(token.slice(7));
       context.user = decoded;
-      console.log(decoded)
       return next();
     } catch (err) {
       throw new AuthorizationError({
