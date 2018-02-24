@@ -1,4 +1,7 @@
 # Common
+directive @isAuthenticated on QUERY | FIELD
+directive @hasScope(scope: [String]) on QUERY | FIELD
+
 enum Gender {
   Female
   Male
@@ -14,9 +17,6 @@ enum Species {
 interface Node {
   id: ID!
 }
-
-directive @isAuthenticated on QUERY | FIELD
-directive @hasScope(scope: [String]) on QUERY | FIELD
 
 type PageInfo {
   # When paginating forwards, are there more items?

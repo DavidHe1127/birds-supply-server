@@ -1,7 +1,5 @@
 const Products = require('../../models/product.model');
-// const Suppliers = require('../../models/supplier.model');
-
-const {connectionFromArray} = require('graphql-relay');
+const { connectionFromArray } = require('graphql-relay');
 
 const viewer = async (obj, args, ctx) => {
   // - excludes field
@@ -9,12 +7,15 @@ const viewer = async (obj, args, ctx) => {
     .populate('parrot')
     .populate({
       path: 'supplier',
-      select: '-parrots',
+      select: '-parrots'
     })
     .exec()
     .then(res => connectionFromArray(res, args));
 
-  return Object.assign(products, {count: products.edges.length || 0});
+  return {
+    id: ctx.user.sub,
+    products
+  };
 };
 
 module.exports = viewer;
