@@ -5,11 +5,12 @@ const jwkToPem = require('jwk-to-pem'),
   fetch = require('node-fetch');
 
 export default class Cognito {
-  constructor(config) {
-    if (!config)
+  constructor (config) {
+    if (!config) {
       throw new TypeError(
-        'Please provide configurations',
+        'Please provide configurations'
       );
+    }
 
     if (configurationIsCorrect(config)) {
       this.userPoolId = config.cognitoUserPoolId;
@@ -20,7 +21,7 @@ export default class Cognito {
     }
   }
 
-  init() {
+  init () {
     console.log(`${this.iss}/.well-known/jwks.json`);
     return fetch(`${this.iss}/.well-known/jwks.json`)
       .then(res => res.json())
@@ -37,21 +38,23 @@ export default class Cognito {
           this.pems[key_id] = pem;
         }
       })
-      .catch(function(err) {
+      .catch(err => {
         throw new TypeError('Unable to generate certificate due to \n' + err);
       });
   }
 
-  verify(token) {
+  verify (token) {
     let decodedJwt = jwt.decode(token, {complete: true});
 
     if (!decodedJwt) return new Error('Not a valid JWT token');
 
-    if (decodedJwt.payload.iss !== this.iss)
+    if (decodedJwt.payload.iss !== this.iss) {
       return new Error('token is not from your User Pool');
+    }
 
-    if (decodedJwt.payload.token_use !== this.tokenUse)
+    if (decodedJwt.payload.token_use !== this.tokenUse) {
       return new Error(`Not an ${this.tokenUse} token`);
+    }
 
     let kid = decodedJwt.header.kid;
     let pem = this.pems[kid];
@@ -62,13 +65,13 @@ export default class Cognito {
       token: token,
       pem: pem,
       iss: this.iss,
-      maxAge: this.tokenExpiration,
+      maxAge: this.tokenExpiration
     };
 
     try {
       return jwt.verify(params.token, params.pem, {
         issuer: params.iss,
-        maxAge: params.maxAge,
+        maxAge: params.maxAge
       });
     } catch (err) {
       return err;
@@ -76,27 +79,23 @@ export default class Cognito {
   }
 }
 
-function configurationIsCorrect(config) {
+function configurationIsCorrect (config) {
   let configurationPassed = false;
   switch (true) {
     case !config.region:
       throw new TypeError('AWS Region not specified in constructor');
-      break;
     case !config.cognitoUserPoolId:
       throw new TypeError(
-        'Cognito User Pool ID is not specified in constructor',
+        'Cognito User Pool ID is not specified in constructor'
       );
-      break;
     case !config.tokenUse:
       throw new TypeError(
-        "Token use not specified in constructor. Possible values 'access' | 'id'",
+        "Token use not specified in constructor. Possible values 'access' | 'id'"
       );
-      break;
-    case !(config.tokenUse == 'access' || config.tokenUse == 'id'):
+    case !(config.tokenUse === 'access' || config.tokenUse === 'id'):
       throw new TypeError(
-        "Token use values not accurate in the constructor. Possible values 'access' | 'id'",
+        "Token use values not accurate in the constructor. Possible values 'access' | 'id'"
       );
-      break;
     default:
       configurationPassed = true;
   }
