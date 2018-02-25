@@ -12,6 +12,7 @@ const viewer = async (obj, args, ctx) => {
     .exec()
     .then(res => connectionFromArray(res, args));
 
+    console.log(ctx.user.sub);
   return {
     id: ctx.user.sub,
     products

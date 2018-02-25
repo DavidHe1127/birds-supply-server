@@ -68,14 +68,10 @@ export default class Cognito {
       maxAge: this.tokenExpiration
     };
 
-    try {
-      return jwt.verify(params.token, params.pem, {
-        issuer: params.iss,
-        maxAge: params.maxAge
-      });
-    } catch (err) {
-      return err;
-    }
+    return jwt.verify(params.token, params.pem, {
+      issuer: params.iss,
+      maxAge: params.maxAge
+    });
   }
 }
 

@@ -1,6 +1,6 @@
 import auth from '../auth';
 
-const {AuthorizationError} = require('../errors');
+const { AuthorizationError } = require('../errors');
 
 const directiveResolvers = {
   isAuthenticated: (next, source, args, context) => {
@@ -10,13 +10,14 @@ const directiveResolvers = {
         message: 'You must supply a JWT for authorization!'
       });
     }
+
     try {
       const decoded = auth.verify(token.slice(7));
       context.user = decoded;
       return next();
     } catch (err) {
       throw new AuthorizationError({
-        message: 'You are not authorized.'
+        message: err.message
       });
     }
   },
@@ -45,7 +46,6 @@ const directiveResolvers = {
       );
     }
   }
-
 };
 
 export default directiveResolvers;
