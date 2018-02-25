@@ -1,8 +1,8 @@
 'use strict';
 
-const jwkToPem = require('jwk-to-pem'),
-  jwt = require('jsonwebtoken'),
-  fetch = require('node-fetch');
+const jwkToPem = require('jwk-to-pem');
+const jwt = require('jsonwebtoken');
+const fetch = require('node-fetch');
 
 export default class Cognito {
   constructor (config) {
