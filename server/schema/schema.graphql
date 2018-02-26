@@ -191,6 +191,8 @@ type User implements Node {
 # Errors for relay to read server errors
 type Error {
   id: ID
+  message: String
+  data: String
 }
 
 #########################################################################################
