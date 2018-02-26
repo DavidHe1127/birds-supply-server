@@ -192,7 +192,11 @@ type User implements Node {
 type Error {
   id: ID
   message: String
-  data: String
+  data: ErrorData
+}
+
+type ErrorData {
+  type: String
 }
 
 #########################################################################################
