@@ -1,7 +1,7 @@
 import restify from 'restify';
 import { graphqlRestify, graphiqlRestify } from 'apollo-server-restify';
 import schema from './schema';
-import auth from './auth';
+import { formatError } from 'apollo-errors';
 
 const corsMiddleware = require('restify-cors-middleware');
 
@@ -30,6 +30,7 @@ server.use(restify.plugins.queryParser());
 
 server.post('/graphql', graphqlRestify(req => ({
   schema,
+  formatError,
   context: {
     headers: {
       Authorization: req.header('Authorization')
