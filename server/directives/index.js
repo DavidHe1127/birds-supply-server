@@ -1,13 +1,17 @@
 import auth from '../auth';
 
 const { AuthorizationError } = require('../errors');
+const data = {
+  type: 'AUTH'
+};
 
 const directiveResolvers = {
   isAuthenticated: (next, source, args, context) => {
     const token = context.headers.Authorization;
     if (!token) {
       throw new AuthorizationError({
-        message: 'You must supply a JWT for authorization!'
+        message: 'You must supply a JWT for authorization!',
+        data
       });
     }
 
@@ -17,7 +21,8 @@ const directiveResolvers = {
       return next();
     } catch (err) {
       throw new AuthorizationError({
-        message: err.message
+        message: err.message,
+        data
       });
     }
   },

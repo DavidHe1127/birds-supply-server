@@ -188,11 +188,9 @@ type User implements Node {
   ): ProductConnection
 }
 
-# Errors
+# Errors for relay to read server errors
 type Error {
-  message: String
-  locations: [String]
-  path: [String]
+  id: ID
 }
 
 #########################################################################################
@@ -241,7 +239,7 @@ type Query {
 
   viewer: User @isAuthenticated
 
-  errors: Error
+  errors: [Error]
 }
 
 # Mutation
