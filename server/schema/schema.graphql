@@ -188,6 +188,13 @@ type User implements Node {
   ): ProductConnection
 }
 
+# Errors
+type Error {
+  message: String
+  locations: [String]
+  path: [String]
+}
+
 #########################################################################################
 
 # Query
@@ -233,6 +240,8 @@ type Query {
   ): SupplierConnection
 
   viewer: User @isAuthenticated
+
+  errors: Error
 }
 
 # Mutation
