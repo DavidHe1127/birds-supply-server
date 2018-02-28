@@ -3,13 +3,15 @@ import { graphqlRestify, graphiqlRestify } from 'apollo-server-restify';
 import schema from './schema';
 import { formatError } from 'apollo-errors';
 
+import { UnauthenticatedError } from './errors' ;
+
 const corsMiddleware = require('restify-cors-middleware');
 
 const cors = corsMiddleware({
   preflightMaxAge: 5,
   origins: ['*'],
   allowHeaders: ['API-Token', 'Authorization'],
-  exposeHeaders: ['API-Token-Expiry']
+  exposeHeaders: ['Location']
 });
 
 global._root = __dirname + '/'; // eslint-disable-line
@@ -28,9 +30,18 @@ server.use(cors.actual);
 server.use(restify.plugins.bodyParser());
 server.use(restify.plugins.queryParser());
 
-server.post('/graphql', graphqlRestify(req => ({
+server.post('/graphql', graphqlRestify((req, res) => ({
   schema,
-  formatError,
+  formatError: error => {
+    if (error.originalError instanceof UnauthenticatedError) {
+      res.status(401);
+      res.set('Location', '/login');
+    } else {
+      res.status(500);
+    }
+
+    return error;
+  },
   context: {
     headers: {
       Authorization: req.header('Authorization')

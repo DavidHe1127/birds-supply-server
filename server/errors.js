@@ -1,5 +1,9 @@
 const { createError } = require('apollo-errors');
 
-export const AuthorizationError = createError('AuthorizationError', {
-  message: 'You are not authorized'
+export const UnauthorizedError = createError('AuthorizationError', {
+  message: 'You are not authorized to do this'
+});
+
+export const UnauthenticatedError = createError('AuthorizationError', {
+  message: 'You are not authenticated'
 });
