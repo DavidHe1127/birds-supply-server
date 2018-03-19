@@ -4,7 +4,6 @@ A platform that connects bird lovers and suppliers together
 
 ### How to run the app
  * You need mongodb server run before run `npm start`
- * Run `npm run seed` to load seeds data - ONLY NEED TO DO IT IN THE FIRST RUN
 
 ### TODO
  * Add Auth i.e login/logout/signup
