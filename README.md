@@ -2,11 +2,17 @@
 
 A platform that connects bird lovers and suppliers together
 
-### How to run the app
+### Prerequisites
+
+#### MongoDB
 We use `mongodb` as the database which means to be able to run the app, you need to install `mongodb` server and keep it running in the background while running birds supply server.
 
-Please ask your lovely friend `Google` about how to install `mongodb`. Once it's installed, follow steps as follow to configure and launch the app.
+Please ask your lovely friend `Google` about how to install `mongodb`.
 
+#### AWS Cognito
+Save `config_sample.json` under project root as `config.json` and put it under `server/` folder. You can provide your own `Cognito` configurations.
+
+### How to run the app
 * Run `npm i` from the root to install required `npm` dependencies
 * Run `npm run seed` to load data set into `mongodb`
 * For `Mac` users, run `npm start`
