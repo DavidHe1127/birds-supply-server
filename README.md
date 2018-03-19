@@ -10,7 +10,18 @@ We use `mongodb` as the database which means to be able to run the app, you need
 Please ask your lovely friend `Google` about how to install `mongodb`.
 
 #### AWS Cognito
-Save `config_sample.json` under project root as `config.json` and put it under `server/` folder. You can provide your own `Cognito` configurations.
+Save `config_sample.json` under project root as `config.json` and put it under `server/` folder. 
+You should replace your own `Cognito` configurations in the `config_sample.json`.
+```
+{
+  "region": "<COGNITO_REGION>",
+  "identityPoolId": "<COGNITO_IDENTITY_POOL_ID>",
+  "userPoolId": "<COGNITO_USER_POOL_ID>",
+  "userPoolWebClientId": "<COGNITO_WEB_CLIENT_ID>"
+}
+
+
+```
 
 ### How to run the app
 * Run `npm i` from the root to install required `npm` dependencies
