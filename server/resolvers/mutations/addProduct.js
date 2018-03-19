@@ -2,7 +2,7 @@ const Products = require('../../models/product.model');
 const Suppliers = require('../../models/supplier.model');
 const Parrots = require('../../models/parrot.model');
 
-const addProduct = async (obj, args) => {
+const addProduct = async (obj, args, ctx) => {
   const { qty, parrotCode, price } = args.input;
 
   const supplierId = await Suppliers.findOne(
@@ -21,7 +21,8 @@ const addProduct = async (obj, args) => {
     supplier: supplierId,
     price,
     qty,
-    sku: parrotCode
+    sku: parrotCode,
+    createdBy: ctx.user.sub
   });
 
   return product.save();

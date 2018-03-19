@@ -256,7 +256,7 @@ type Mutation {
   setCustomer(input: setCustomerInput): Customer
   delCustomer(input: delCustomerInput): Customer
 
-  addProduct(input: addProductInput!): addProductPayload
-  delProduct(input: delProductInput!): delProductPayload
-  setProduct(input: setProductInput!): setProductPayload
+  addProduct(input: addProductInput!): addProductPayload @isAuthenticated
+  delProduct(input: delProductInput!): delProductPayload @isAuthenticated
+  setProduct(input: setProductInput!): setProductPayload @isAuthenticated
 }
