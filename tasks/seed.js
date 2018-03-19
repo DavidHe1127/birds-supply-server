@@ -40,11 +40,16 @@ const products = require("./seeds/products.json");
 
   const syncedSuppliers = await Suppliers.insertMany(suppliersToSync);
 
-  const productsToSync = products.map(p => ({
-    ...p,
-    parrot: syncedParrots.find(x => x.code === p.parrot)._id,
-    supplier: syncedSuppliers.find(x => x.code === p.supplier)._id
-  }));
+  const productsToSync = products.map(p => {
+
+    p.createdBy = 'root' // created by root user for preloaded data set
+
+    return {
+      ...p,
+      parrot: syncedParrots.find(x => x.code === p.parrot)._id,
+      supplier: syncedSuppliers.find(x => x.code === p.supplier)._id
+    };
+  });
 
   await Products.insertMany(productsToSync);
 
