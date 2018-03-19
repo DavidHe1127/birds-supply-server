@@ -22,7 +22,7 @@ Save `config_sample.json` under project root as `config.json` and put it under `
 Go to `http://localhost:4000/graphiql` to write and test your `graphql` queries
 
 ### TODO
- * Add Auth i.e login/logout/signup
+ * Add signup page/logic
  * Add validations
  * Refactor resolvers and types config
  * Add subscriptions
