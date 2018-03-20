@@ -234,7 +234,7 @@ type Query {
     supplierId: ID
   ): ProductConnection
 
-  supplier(id: ID code: String): Supplier @isAuthenticated
+  supplier(id: ID code: String): Supplier
   suppliers(
     skip: Int
     after: String
