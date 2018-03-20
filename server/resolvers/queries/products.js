@@ -16,7 +16,7 @@ const products = async (obj, args, ctx) => {
   }
 
   // - excludes field
-  const productsDB = await Products.find(query)
+  const productList = await Products.find(query)
     .populate('parrot')
     .populate({
       path: 'supplier',
@@ -24,8 +24,8 @@ const products = async (obj, args, ctx) => {
     })
     .exec()
     .then(res => connectionFromArray(res, args));
-  
-  return Object.assign(productsDB, { count: productsDB.edges.length || 0 });
+
+  return Object.assign(productList, { count: productList.edges.length || 0, id: ctx.user.id });
 };
 
 module.exports = products;
