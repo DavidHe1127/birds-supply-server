@@ -1,6 +1,6 @@
 ## Bird Supply Server
 
-A platform that connects bird lovers and suppliers together
+A platform that connects bird lovers and suppliers together.
 
 ### Prerequisites
 
@@ -10,7 +10,7 @@ We use `mongodb` as the database which means to be able to run the app, you need
 Please ask your lovely friend `Google` about how to install `mongodb`.
 
 #### AWS Cognito
-Save `config_sample.json` under project root as `config.json` and put it under `server/` folder. 
+Save `config_sample.json` under project root as `config.json` and put it under `server/` folder.
 You should replace your own `Cognito` configurations in the `config_sample.json`.
 ```
 {
@@ -28,14 +28,14 @@ You should replace your own `Cognito` configurations in the `config_sample.json`
 * Run `npm run seed` to load data set into `mongodb`
 * For `Mac` users, run `npm start`
   For `Windows` users, you need to ensure your `mongodb` is already running at the background and run `npm run win` under the project root
-  
+
 ### Graphiql Interface
 Go to `http://localhost:4000/graphiql` to write and test your `graphql` queries
 
 ### TODO
  * Add signup page/logic
  * Add validations
- * Refactor resolvers and types config
+ * Replace directiveResolvers with SchemaDirectiveVisitor
  * Add subscriptions
  * Add dataloader
 
