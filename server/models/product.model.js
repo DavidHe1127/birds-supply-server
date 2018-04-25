@@ -29,6 +29,10 @@ const ProductSchema = new mongoose.Schema(
     createdBy: {
       type: String,
       required: true
+    },
+
+    avatar: {
+      type: String
     }
 
   },

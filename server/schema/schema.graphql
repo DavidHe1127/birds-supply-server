@@ -96,6 +96,7 @@ type Product implements Node {
   sku: String
   qty: Int
   price: Int
+  avatar: String
   parrot: Parrot
   supplier: Supplier
 }
@@ -116,6 +117,7 @@ input addProductInput {
   price: Int
   qty: Int
   parrotCode: String
+  avatar: String
 }
 
 input delProductInput {
