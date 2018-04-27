@@ -25,7 +25,15 @@ const products = async (obj, args, ctx) => {
     .exec()
     .then(res => connectionFromArray(res, args));
 
-  return Object.assign(productList, { count: productList.edges.length || 0, id: ctx.user.id });
+  const propsToMerge = {
+    count: productList.edges.length || 0
+  };
+
+  if (ctx.user) {
+    propsToMerge.id = ctx.user.id;
+  }
+
+  return Object.assign(productList, propsToMerge);
 };
 
 module.exports = products;
