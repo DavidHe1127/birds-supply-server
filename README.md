@@ -33,6 +33,7 @@ You should replace your own `Cognito` configurations in the `config_sample.json`
 Go to `http://localhost:4000/graphiql` to write and test your `graphql` queries
 
 ### TODO
+ * Avoid sending user id in query when it is not available in context
  * Add signup page/logic
  * Research on [Apollo mongodb connector](https://github.com/apollographql/graphql-tools/blob/master/designs/connectors.md) to see if it brings any benefits and has a fit in our app
  * Add validations
