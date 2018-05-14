@@ -34,7 +34,7 @@ Go to `http://localhost:4000/graphiql` to write and test your `graphql` queries
 
 ### TODO
  * Add signup page/logic
- * Research on [Apollo mongodb connector](https://github.com/apollographql/graphql-tools/blob/master/designs/connectors.md) to see if it brings any benefits and has a fit in our app
+ * Refactor mutation design as per [Graphql Mutation Deisgn](https://techblog.commercetools.com/modeling-graphql-mutations-52d4369f73b1)
  * Add validations
  * Replace directiveResolvers with SchemaDirectiveVisitor
  * Add subscriptions
