@@ -142,6 +142,37 @@ type setProductPayload {
   product: Product
 }
 
+# Request
+enum Status {
+  pending
+  rejected
+  approved
+}
+
+type Request implements Node {
+  id: ID!
+  bird: String
+  code: String
+  reason: String
+  status: Status
+}
+
+type RequestConnection {
+  pageInfo: PageInfo!
+  # a list of edges
+  edges: [RequestEdge]
+  count: Int!
+}
+
+type RequestEdge {
+  cursor: String
+  node: Request
+}
+
+type addRequestPayload {
+  request: Request
+}
+
 # Supplier
 type Supplier implements Node {
   id: ID!
@@ -217,6 +248,16 @@ type Query {
     last: Int
   ): ParrotConnection
   parrotsToProduct(supplierId: ID): ParrotConnection
+
+  request(id: ID!): Request
+  requests(
+    skip: Int
+    after: String
+    before: String
+    first: Int
+    last: Int
+    reqId: ID
+  ): RequestConnection
 
   product(id: ID!): Product
   products(

@@ -6,9 +6,7 @@ mongoose.Promise = global.Promise;
 
 module.exports = () =>
   mongoose
-    .connect(config.get('mongo.uri'), {
-      useMongoClient: true
-    })
+    .connect(config.get('mongo.uri'))
     .then(res => {
       console.log('mongodb connected');
     })
