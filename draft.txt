@@ -1,0 +1,11 @@
+mutation {
+  addRequest(input: {
+    bird: "caique",
+    code: "caique",
+    reason: "I love this bird"
+  }) {
+    request {
+      id
+    }
+  }
+}

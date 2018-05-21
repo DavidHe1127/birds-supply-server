@@ -33,6 +33,7 @@ You should replace your own `Cognito` configurations in the `config_sample.json`
 Go to `http://localhost:4000/graphiql` to write and test your `graphql` queries
 
 ### TODO
+ * Add new feature that allows users to request for new bird
  * Add signup page/logic
  * Refactor mutation design as per [Graphql Mutation Deisgn](https://techblog.commercetools.com/modeling-graphql-mutations-52d4369f73b1)
  * Add validations
