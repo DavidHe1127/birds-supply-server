@@ -10,6 +10,8 @@
     "stop": "mongo admin --eval 'db.shutdownServer()'",
     "start": "nodemon ./server --exec \"cross-env BABEL_DISABLE_CACHE=1 babel-node --plugins babel-plugin-inline-import\" -e js,graphql",
     "win": "nodemon ./server --exec \"cross-env BABEL_DISABLE_CACHE=1 babel-node --plugins babel-plugin-inline-import\" -e js,graphql",
+    "start:authfree": "\"cross-env AUTH_FREE=1 \" npm start",
+    "win:authfree": "\"cross-env AUTH_FREE=1 \" npm run win",
     "production": "NODE_ENV=production node ./build",
     "mongo": "mongo graphql-playpen",
     "seed": "node ./tasks/seed",

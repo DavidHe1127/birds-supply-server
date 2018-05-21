@@ -1,5 +1,5 @@
 const env = {
-  isProd: process.env.NODE_ENV === 'production'
+  isAuthFree: process.env.NODE_ENV !== 'production' && process.env.AUTH_FREE === '1'
 };
 
 export {

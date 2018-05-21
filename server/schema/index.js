@@ -13,7 +13,7 @@ const attrs = {
 };
 
 // turn on directives in production
-if (env.isProd) {
+if (!env.isAuthFree) {
   attrs.directiveResolvers = directiveResolvers;
 }
 
