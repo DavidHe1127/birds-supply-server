@@ -179,6 +179,15 @@ input addRequestInput {
   reason: String
 }
 
+input setRequestStatusInput {
+  id: ID!
+  status: Status
+}
+
+type setRequestStatusPayload {
+  request: Request
+}
+
 # Supplier
 type Supplier implements Node {
   id: ID!
@@ -310,4 +319,5 @@ type Mutation {
   setProduct(input: setProductInput!): setProductPayload @isAuthenticated
 
   addRequest(input: addRequestInput!): addRequestPayload @isAuthenticated
+  setRequestStatus(input: setRequestStatusInput!): setRequestStatusPayload @isAuthenticated
 }
