@@ -5,7 +5,7 @@ const { connectionFromArray } = require('graphql-relay');
 const requests = async (obj, args, ctx) => {
   const query = {};
 
-  const requestList = await Products.find(query)
+  const requestList = await Requests.find(query)
     .then(res => connectionFromArray(res, args));
 
   const propsToMerge = {

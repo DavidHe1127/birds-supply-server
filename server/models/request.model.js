@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 const shortid = require('shortid');
 
+const STATUS = [
+  'pending',
+  'approved',
+  'rejected'
+];
 
 const RequestSchema = new mongoose.Schema(
   {
@@ -24,12 +29,13 @@ const RequestSchema = new mongoose.Schema(
 
     status: {
       type: String,
-      enum: ['pending', 'approved', 'rejected']
+      enum: STATUS,
+      default: STATUS[0]
     },
 
     createdBy: {
       type: String,
-      required: true
+      // required: true
     },
   },
   {

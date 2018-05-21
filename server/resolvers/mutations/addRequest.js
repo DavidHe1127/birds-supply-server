@@ -1,8 +1,6 @@
 const Requests = require('../../models/request.model');
 
 const addRequest = async (obj, args, ctx) => {
-  console.log(request)
-
   const { bird, code, reason } = args.input;
 
   const request = new Requests({
@@ -11,8 +9,9 @@ const addRequest = async (obj, args, ctx) => {
     reason
   });
 
-
-  return request.save();
+  return {
+    request: request.save()
+  };
 };
 
 module.exports = addRequest;
