@@ -1,39 +1,18 @@
-const Products = require('../../models/product.model');
-const Suppliers = require('../../models/supplier.model');
+const Requests = require('../../models/request.model');
 
 const { connectionFromArray } = require('graphql-relay');
 
-const products = async (obj, args, ctx) => {
+const requests = async (obj, args, ctx) => {
   const query = {};
 
-  if (args.supplierId) {
-    query.supplier = supplierId;
-  } else {
-    // keep it until supplier auth done
-    query.supplier = await Suppliers.findOne({
-      code: 'australia_macaws'
-    }).select('_id');
-  }
-
-  // - excludes field
-  const productList = await Products.find(query)
-    .populate('parrot')
-    .populate({
-      path: 'supplier',
-      select: '-parrots'
-    })
-    .exec()
+  const requestList = await Products.find(query)
     .then(res => connectionFromArray(res, args));
 
   const propsToMerge = {
-    count: productList.edges.length || 0
+    count: requestList.edges.length || 0
   };
 
-  if (ctx.user) {
-    propsToMerge.id = ctx.user.id;
-  }
-
-  return Object.assign(productList, propsToMerge);
+  return Object.assign(requestList, propsToMerge);
 };
 
-module.exports = products;
+module.exports = requests;

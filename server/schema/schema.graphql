@@ -173,6 +173,12 @@ type addRequestPayload {
   request: Request
 }
 
+input addRequestInput {
+  bird: String
+  code: String
+  reason: String
+}
+
 # Supplier
 type Supplier implements Node {
   id: ID!
@@ -302,4 +308,6 @@ type Mutation {
   addProduct(input: addProductInput!): addProductPayload @isAuthenticated
   delProduct(input: delProductInput!): delProductPayload @isAuthenticated
   setProduct(input: setProductInput!): setProductPayload @isAuthenticated
+
+  addRequest(input: addRequestInput!): addRequestPayload @isAuthenticated
 }
