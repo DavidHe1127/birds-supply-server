@@ -1,5 +1,3 @@
-'use strict';
-
 const jwkToPem = require('jwk-to-pem');
 const jwt = require('jsonwebtoken');
 const fetch = require('node-fetch');
