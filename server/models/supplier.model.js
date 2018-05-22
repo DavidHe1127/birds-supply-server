@@ -25,8 +25,7 @@ const SupplierSchema = new mongoose.Schema({
   }]
 
 }, {
-  collection: 'suppliers',
-  _id: false
+  collection: 'suppliers'
 });
 
 module.exports = mongoose.model('Supplier', SupplierSchema);
