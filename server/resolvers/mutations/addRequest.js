@@ -1,10 +1,10 @@
 const Requests = require('../../models/request.model');
 
 const addRequest = async (obj, args, ctx) => {
-  const { bird, code, reason } = args.input;
+  const { parrot, code, reason } = args.input;
 
   const request = new Requests({
-    bird,
+    parrot,
     code,
     reason
   });
@@ -18,7 +18,7 @@ module.exports = addRequest;
 
 // mutation {
 //   addRequest(input: {
-//     bird: "caique",
+//     parrot: "caique",
 //     code: "caique",
 //     reason: "I love this bird"
 //   }) {

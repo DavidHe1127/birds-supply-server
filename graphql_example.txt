@@ -1,6 +1,6 @@
 mutation {
   addRequest(input: {
-    bird: "caique",
+    parrot: "caique",
     code: "caique",
     reason: "I love this bird"
   }) {

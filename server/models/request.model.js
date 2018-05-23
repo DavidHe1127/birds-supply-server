@@ -9,7 +9,7 @@ const STATUS = [
 
 const RequestSchema = new mongoose.Schema(
   {
-    bird: {
+    parrot: {
       type: String,
       required: true
     },
