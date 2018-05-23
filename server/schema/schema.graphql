@@ -263,6 +263,7 @@ type Query {
     last: Int
   ): ParrotConnection
   parrotsToProduct(supplierId: ID): ParrotConnection
+  ifParrotExist(code: String!): Boolean
 
   request(id: ID!): Request
   requests(
