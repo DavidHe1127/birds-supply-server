@@ -27,9 +27,8 @@ const resolvers = {
   },
 
   User: {
-    products: user => {
-      return user.products;
-    }
+    products: user => user.products,
+    requests: user => user.requests
   }
 
 };
