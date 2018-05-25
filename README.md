@@ -34,6 +34,8 @@ Go to `http://localhost:4000/graphiql` to write and test your `graphql` queries
 
 ### TODO
  * Add new feature that allows users to request for new parrot
+ * overhaul queries/move public queries to under viewer node
+
  * Add signup page/logic
  * Refactor mutation design as per [Graphql Mutation Deisgn](https://techblog.commercetools.com/modeling-graphql-mutations-52d4369f73b1)
  * Add validations
