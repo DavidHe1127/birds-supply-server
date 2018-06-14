@@ -33,6 +33,7 @@ You should replace your own `Cognito` configurations in the `config_sample.json`
 Go to `http://localhost:4000/graphiql` to write and test your `graphql` queries
 
 ### TODO
+ * Integrate [Graphql Apollo Engine](#https://www.apollographql.com/engine/)
  * Inspect to see if N+1 problem presents (dataloader comes to the rescue for this)
  * overhaul queries/move public queries to under viewer node
 
