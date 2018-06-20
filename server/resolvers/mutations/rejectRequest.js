@@ -1,11 +1,13 @@
 const Requests = require('../../models/request.model');
 
-const setRequestStatus = async (obj, args) => {
-  const { id, status } = args.input;
-  const params = {};
+const rejectRequest = async (obj, args) => {
+  const { id, reason } = args.input;
+  const params = {
+    status: 'rejected'
+  };
 
-  if (status) {
-    params.status = status;
+  if (reason) {
+    params.reason = reason;
   }
 
   // set new to true to return modified document
@@ -18,4 +20,4 @@ const setRequestStatus = async (obj, args) => {
   };
 };
 
-module.exports = setRequestStatus;
+module.exports = rejectRequest;

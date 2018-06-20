@@ -169,7 +169,11 @@ type RequestEdge {
   node: Request
 }
 
-type addRequestPayload {
+type requestPayload {
+  request: Request
+}
+
+type rejectRequestPayload {
   request: Request
 }
 
@@ -179,13 +183,13 @@ input addRequestInput {
   reason: String
 }
 
-input setRequestStatusInput {
+input rejectRequestInput {
   id: ID!
-  status: Status
+  reason: String
 }
 
-type setRequestStatusPayload {
-  request: Request
+input approveRequestInput {
+  id: ID!
 }
 
 # Supplier
@@ -326,6 +330,7 @@ type Mutation {
   delProduct(input: delProductInput!): delProductPayload @isAuthenticated
   setProduct(input: setProductInput!): setProductPayload @isAuthenticated
 
-  addRequest(input: addRequestInput!): addRequestPayload @isAuthenticated
-  setRequestStatus(input: setRequestStatusInput!): setRequestStatusPayload @isAuthenticated
+  addRequest(input: addRequestInput!): requestPayload @isAuthenticated
+  rejectRequest(input: rejectRequestInput!): requestPayload @isAuthenticated
+  approveRequest(input: approveRequestInput!): requestPayload @isAuthenticated
 }
