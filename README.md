@@ -34,6 +34,7 @@ Go to `http://localhost:4000/graphiql` to write and test your `graphql` queries
 
 ### TODO
  * Upgrade apollo server to 2.0
+ * Add relay-modern persisted queries http://www.reactjunkie.com/relay-modern-persisted-queries/
  * Persist notifications into firebase db & use firebase cloud messaging to send notifications
  * Integrate [Graphql Apollo Engine](#https://www.apollographql.com/engine/)
  * Inspect to see if N+1 problem presents (dataloader comes to the rescue for this)
