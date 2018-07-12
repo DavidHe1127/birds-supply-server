@@ -7,10 +7,10 @@
     * Client side app needs to be set up and gain access to read notifications from firestore
     * Data structure
     ```js
-    db.collection('NEW_PARROT_REQUEST_RESULT_NOTIFICATIONS')
-      .doc('COGNITO_USER_ID')
-      .collection('notifications')
-      .doc('NEW_PARROT_REQUEST_ID_IN_MONGODB')
+    db.collection('USERS')
+      .doc('USER_A')
+      .collection('NEW_PARROT_REQUEST_RESULT_NOTIFICATIONS')
+      .doc('REQUEST_ID_ABC')
       .set({
         status: 'APPROVED',
         reason: 'This request does not exist in our system',
@@ -20,13 +20,11 @@
   ### Push Registration Token Persistence
     * Save it to firestore
     ```js
-      db.collection('NOTIFICATION_REGISTRATION_TOKENS')
-        .doc('COGNITO_USER_ID')
-        .collection('registration_tokens')
-        .doc('token')
+      db.collection('USERS')
+        .doc('USER_B')
         .set({
-          value: 'jsjkJBLKJSDKijdsfijsdBJKLSDIELWLJKD'
-        })
+          registration_tokens: ['jsjkJBLKJSDKijdsfijsdBJKLSDIELWLJKD']
+        });
     ```
 
 
