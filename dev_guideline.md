@@ -17,6 +17,18 @@
         actionedOn: Date.now()
       });
     ```
+  ### Push Registration Token Persistence
+    * Save it to firestore
+    ```js
+      db.collection('NOTIFICATION_REGISTRATION_TOKENS')
+        .doc('COGNITO_USER_ID')
+        .collection('registration_tokens')
+        .doc('token')
+        .set({
+          value: 'jsjkJBLKJSDKijdsfijsdBJKLSDIELWLJKD'
+        })
+    ```
+
 
   ### Send and Receive Notifications
     * Plug admin sdk into graphql server
