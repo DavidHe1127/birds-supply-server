@@ -228,6 +228,19 @@ type SupplierParrotsEdge {
   node: Parrot
 }
 
+# DeviceRegistrationToken
+input addDeviceRegistrationTokenInput {
+  value: String!
+}
+
+type deviceRegistrationTokenPayload {
+  deviceRegistrationToken: DeviceRegistrationToken
+}
+
+type DeviceRegistrationToken {
+  value: String!
+}
+
 # User
 type User implements Node {
   id: ID!
@@ -333,4 +346,6 @@ type Mutation {
   addRequest(input: addRequestInput!): requestPayload @isAuthenticated
   rejectRequest(input: rejectRequestInput!): requestPayload @isAuthenticated
   approveRequest(input: approveRequestInput!): requestPayload @isAuthenticated
+
+  addDeviceRegistrationToken(input: addDeviceRegistrationTokenInput!): deviceRegistrationTokenPayload @isAuthenticated
 }

@@ -5,6 +5,10 @@ import { formatError } from 'apollo-errors';
 
 import { UnauthenticatedError } from './errors' ;
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').load();
+}
+
 const corsMiddleware = require('restify-cors-middleware');
 
 const cors = corsMiddleware({
