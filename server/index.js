@@ -1,13 +1,11 @@
 import restify from 'restify';
 import { graphqlRestify, graphiqlRestify } from 'apollo-server-restify';
+import './env';
+import './firebase';
 import schema from './schema';
 import { formatError } from 'apollo-errors';
 
 import { UnauthenticatedError } from './errors' ;
-
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').load();
-}
 
 const corsMiddleware = require('restify-cors-middleware');
 
