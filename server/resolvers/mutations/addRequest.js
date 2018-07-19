@@ -15,15 +15,3 @@ const addRequest = async (obj, args, ctx) => {
 };
 
 module.exports = addRequest;
-
-// mutation {
-//   addRequest(input: {
-//     parrot: "caique",
-//     code: "caique",
-//     reason: "I love this bird"
-//   }) {
-//     request {
-//       id
-//     }
-//   }
-// }

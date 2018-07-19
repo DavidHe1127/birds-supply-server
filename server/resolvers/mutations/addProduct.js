@@ -30,13 +30,3 @@ const addProduct = async (obj, args, ctx) => {
 };
 
 module.exports = addProduct;
-
-// mutation {
-//   addProduct(input: {
-//     price: 777
-//     code: "sulphur-crested_cockatoo"
-//     qty: 77
-//   }) {
-//     id
-//   }
-// }
