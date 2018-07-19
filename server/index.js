@@ -1,9 +1,10 @@
 import restify from 'restify';
 import { graphqlRestify, graphiqlRestify } from 'apollo-server-restify';
+import { formatError } from 'apollo-errors';
 import './env';
 import './firebase';
+import { env } from './utils';
 import schema from './schema';
-import { formatError } from 'apollo-errors';
 
 import { UnauthenticatedError } from './errors' ;
 
@@ -32,24 +33,29 @@ server.use(cors.actual);
 server.use(restify.plugins.bodyParser());
 server.use(restify.plugins.queryParser());
 
-server.post('/graphql', graphqlRestify((req, res) => ({
-  schema,
-  formatError: error => {
-    if (error.originalError instanceof UnauthenticatedError) {
-      res.status(401);
-      res.set('Location', '/login');
-    } else {
-      res.status(500);
-    }
+server.post(
+  '/graphql',
+  graphqlRestify((req, res) => ({
+    schema,
+    formatError: error => {
+      if (error.originalError instanceof UnauthenticatedError) {
+        res.status(401);
+        res.set('Location', '/login');
+      } else {
+        res.status(500);
+      }
 
-    return error;
-  },
-  context: {
-    headers: {
-      Authorization: req.header('Authorization')
-    }
-  }
-})));
+      return error;
+    },
+    context: env.isAuthFree
+      ? {user: {sub: 'DUMMY_USER'}}
+      : {
+          headers: {
+            Authorization: req.header('Authorization'),
+          },
+        },
+  })),
+);
 
 // for relay to get schema
 server.get('/graphql', graphqlRestify({
