@@ -15,7 +15,6 @@ RUN mkdir build tasks
 
 COPY build /usr/src/app/build/
 COPY tasks /usr/src/app/tasks/
-COPY config /usr/src/app/config/
 
 EXPOSE 4000
 

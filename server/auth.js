@@ -1,5 +1,6 @@
 import Cognito from './cognito';
-import config from './config';
+
+const config = JSON.parse(process.env.AWS_COGNITO);
 
 const auth = new Cognito({
   region: config.region,

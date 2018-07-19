@@ -10,8 +10,7 @@ We use `mongodb` as the database which means to be able to run the app, you need
 Please ask your lovely friend `Google` about how to install `mongodb`.
 
 #### AWS Cognito
-Save `config_sample.json` under project root as `config.json` and put it under `server/` folder.
-You should replace your own `Cognito` configurations in the `config_sample.json`.
+Create a `.env` file under your project root based off `.env.example` and populate it with correct AWS Cognito credentials
 ```
 {
   "region": "<COGNITO_REGION>",
@@ -19,8 +18,6 @@ You should replace your own `Cognito` configurations in the `config_sample.json`
   "userPoolId": "<COGNITO_USER_POOL_ID>",
   "userPoolWebClientId": "<COGNITO_WEB_CLIENT_ID>"
 }
-
-
 ```
 
 ### How to run the app
@@ -34,7 +31,6 @@ Go to `http://localhost:4000/graphiql` to write and test your `graphql` queries
 
 ### TODO
  * Upgrade apollo server to 2.0
- * Replace config with dotenv
  * Add relay-modern persisted queries http://www.reactjunkie.com/relay-modern-persisted-queries/
  * Persist notifications into firebase db & use firebase cloud messaging to send notifications
  * Integrate [Graphql Apollo Engine](#https://www.apollographql.com/engine/)
