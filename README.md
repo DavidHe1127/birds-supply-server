@@ -22,7 +22,8 @@ Create a `.env` file under your project root based off `.env.example` and popula
 
 ### How to run the app
 * Run `npm i` from the root to install required `npm` dependencies
-* Run `npm run seed` to load data set into `mongodb`
+* Run `npm run seed` to preload sample data into `mongodb`
+* Duplicate `.env.example` as `.env` in the same location as `.env.example` and populate the required services credentials
 * For `Mac` users, run `npm start`
   For `Windows` users, you need to ensure your `mongodb` is already running at the background and run `npm run win` under the project root
 
