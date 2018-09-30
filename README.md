@@ -9,17 +9,6 @@ We use `mongodb` as the database which means to be able to run the app, you need
 
 Please ask your lovely friend `Google` about how to install `mongodb`.
 
-#### AWS Cognito
-Create a `.env` file under your project root based off `.env.example` and populate it with correct AWS Cognito credentials
-```
-{
-  "region": "<COGNITO_REGION>",
-  "identityPoolId": "<COGNITO_IDENTITY_POOL_ID>",
-  "userPoolId": "<COGNITO_USER_POOL_ID>",
-  "userPoolWebClientId": "<COGNITO_WEB_CLIENT_ID>"
-}
-```
-
 ### How to run the app
 * Run `npm i` from the root to install required `npm` dependencies
 * Run `npm run seed` to preload sample data into `mongodb`
