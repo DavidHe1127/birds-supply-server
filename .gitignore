@@ -12,3 +12,6 @@ yarn-error.log*
 
 # Temp folder
 tmp
+
+# FCM
+notifications_service_account_key.json

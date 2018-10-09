@@ -10,11 +10,15 @@ We use `mongodb` as the database which means to be able to run the app, you need
 Please ask your lovely friend `Google` about how to install `mongodb`.
 
 ### How to run the app
-* Run `npm i` from the root to install required `npm` dependencies
-* Run `npm run seed` to preload sample data into `mongodb`
-* Duplicate `.env.example` as `.env` in the same location as `.env.example` and populate the required services credentials
-* For `Mac` users, run `npm start`
-  For `Windows` users, you need to ensure your `mongodb` is already running at the background and run `npm run win` under the project root
+  * Run `npm i` from the root to install required `npm` dependencies
+  * Run `npm run seed` to preload sample data into `mongodb`
+  * Duplicate `.env.example` as `.env` in the same location as `.env.example` and populate the required services credentials
+  * Configure FCM as per instructions of next section
+  * For `Mac` users, run `npm start`
+    For `Windows` users, you need to ensure your `mongodb` is already running at the background and run `npm run win` under the project root
+
+### How to configure FCM
+Go to `service accounts` under your `project settings page` and click `generate private key` to generate and download a json credentials.
 
 ### Graphiql Interface
 Go to `http://localhost:4000/graphiql` to write and test your `graphql` queries
