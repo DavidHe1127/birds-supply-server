@@ -6,15 +6,16 @@ RUN mkdir -p /usr/src/app
 
 COPY package*.json /usr/src/app/
 
+# set the file path context so that instructions with relative path can be resolved correctly
 WORKDIR /usr/src/app/
 
-RUN npm i --only=production
+RUN npm cache clean - force && npm i --only=production
 
 # Bundle app source
 RUN mkdir build tasks
 
-COPY build /usr/src/app/build/
-COPY tasks /usr/src/app/tasks/
+COPY build build/
+COPY tasks tasks/
 
 EXPOSE 4000
 
