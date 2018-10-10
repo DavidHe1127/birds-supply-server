@@ -15,7 +15,7 @@
     "production": "NODE_ENV=production node ./build",
     "mongo": "mongo graphql-playpen",
     "seed": "node ./tasks/seed",
-    "build": "npm run clean && babel ./server -d ./build --copy-files --plugins babel-plugin-inline-import",
+    "build": "npm run clean && babel ./server -d ./build --copy-files --include-dotfiles --plugins babel-plugin-inline-import",
     "clean": "rm -rf build",
     "docker:build": "docker build -t birds-supply-server .",
     "docker:run": "docker run -p 4000:4000 birds-supply-server"
@@ -47,8 +47,9 @@
     "shortid": "^2.2.8"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.0",
-    "babel-core": "^6.26.0",
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
     "babel-plugin-inline-import": "^2.0.6",
     "babel-preset-env": "^1.6.1",
     "cross-env": "^5.1.4",
